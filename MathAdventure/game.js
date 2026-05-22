@@ -27,6 +27,7 @@ const COLORS = {
 // 遊戲狀態
 let gameState = 'MENU';
 let roomCount = 1;
+let cycleCount = 1; // 新增：追蹤目前是第幾輪 (4+1)
 let score = 0;
 let hp = 3;
 let targetNum = 0;
@@ -34,6 +35,9 @@ let factorsToFind = [];
 let foundFactors = [];
 let gameActive = true;
 let doorOpen = false;
+
+let startTime = 0; // 新增：計時器
+let elapsedTime = 0;
 
 let isEntering = false;
 let isExiting = false;
@@ -54,8 +58,22 @@ const mouse = { x: 0, y: 0 };
 let lastShot = { x: 0, y: 0, timer: 0 };
 
 let gameObjects = [];
-let bossMultiplesPool = []; // 新增：Boss 戰的唯一倍數池
+let bossMultiplesPool = [];
 const keys = {};
+
+const leaderboardKey = 'math_adventure_scores'; // LocalStorage key
+
+function getLeaderboard() {
+    const data = localStorage.getItem(leaderboardKey);
+    return data ? JSON.parse(data) : [];
+}
+
+function saveToLeaderboard(newScore, time, level) {
+    const lb = getLeaderboard();
+    lb.push({ score: newScore, time: time, level: level, date: new Date().toLocaleDateString() });
+    lb.sort((a, b) => b.score - a.score);
+    localStorage.setItem(leaderboardKey, JSON.stringify(lb.slice(0, 5))); // 只存前 5 名
+}
 
 window.addEventListener('keydown', e => keys[e.code] = true);
 window.addEventListener('keyup', e => keys[e.code] = false);
@@ -77,10 +95,19 @@ startButton.addEventListener('click', () => {
 
 function startGame() {
     gameState = 'PLAYING';
+    gameActive = true;
     startScreen.style.display = 'none';
     hud.style.display = 'flex';
     factorChecklist.style.display = 'block';
     instructions.style.display = 'block';
+
+    roomCount = 1;
+    cycleCount = 1;
+    score = 0;
+    hp = 3;
+    startTime = Date.now();
+    elapsedTime = 0;
+
     initRoom();
 }
 
@@ -99,6 +126,7 @@ function checkOverlap(x, y, others) {
 }
 
 function initRoom() {
+    // 每 5 關一個 Boss (1,2,3,4 關 factor, 第 5 關 Boss)
     isBossMode = (roomCount % 5 === 0);
     isEntering = true;
     isExiting = false;
@@ -115,9 +143,27 @@ function initRoom() {
 }
 
 function initNormalMode() {
-    let maxNum = 20 + (roomCount * 5);
+    let maxNum = 20 + (cycleCount * 10);
     targetNum = Math.floor(Math.random() * (maxNum - 10)) + 10;
-    factorsToFind = getFactors(targetNum);
+
+    let allFactors = getFactors(targetNum);
+
+    // 根據 Cycle 決定因子數量
+    // Cycle 1: 2-6 個因子
+    // Cycle 2+: 6-8 個因子
+    let minF = cycleCount === 1 ? 2 : 6;
+    let maxF = cycleCount === 1 ? 6 : 8;
+
+    // 如果總因子數不夠，就全拿，否則隨機挑選
+    if (allFactors.length <= minF) {
+        factorsToFind = allFactors;
+    } else {
+        const count = Math.min(allFactors.length, Math.floor(Math.random() * (maxF - minF + 1)) + minF);
+        factorsToFind = [];
+        const shuffled = [...allFactors].sort(() => 0.5 - Math.random());
+        for(let i=0; i<count; i++) factorsToFind.push(shuffled[i]);
+    }
+
     foundFactors = [];
     doorOpen = false;
     gameObjects = [];
@@ -125,20 +171,14 @@ function initNormalMode() {
     const numbersForThisRoom = new Set();
     factorsToFind.forEach(f => numbersForThisRoom.add(f));
 
-    const initialDistractorCount = 6;
+    const initialDistractorCount = 6 + cycleCount;
     let attempts = 0;
 
-    // *** 確保生成獨一無二的數字 ***
     while (numbersForThisRoom.size < factorsToFind.length + initialDistractorCount && attempts < 200) {
-        let n;
-        do {
-            n = Math.floor(Math.random() * maxNum) + 1;
-        } while (
-            factorsToFind.includes(n) ||          // 不是因子
-            (n > targetNum && n % targetNum === 0) || // 不是倍數 (除非是 targetNum 本身，但因子已包含)
-            numbersForThisRoom.has(n)              // 確保數字唯一
-        );
-        numbersForThisRoom.add(n);
+        let n = Math.floor(Math.random() * maxNum) + 1;
+        if (!factorsToFind.includes(n) && !numbersForThisRoom.has(n)) {
+            numbersForThisRoom.add(n);
+        }
         attempts++;
     }
 
@@ -153,7 +193,7 @@ function initNormalMode() {
         gameObjects.push({ x: posX, y: posY, width: 40, height: 40, number: num, isDistractor: !factorsToFind.includes(num) });
     });
 
-    roomDisplay.innerText = roomCount;
+    roomDisplay.innerText = `Room ${roomCount} (Cycle ${cycleCount})`;
     targetValDisplay.innerText = targetNum;
     updateChecklist();
     updateHP();
@@ -161,30 +201,33 @@ function initNormalMode() {
 
 function initBossMode() {
     bossHp = 100;
-    // 增加隨機性：目標數字改為 6-13 之間
-    targetNum = Math.floor(Math.random() * 8) + 6;
+    // Boss 倍數隨 Cycle 增加
+    // Cycle 1: 2-9
+    // Cycle 2: 11-19
+    // Cycle 3+: 21-29...
+    let baseOffset = (cycleCount - 1) * 10;
+    targetNum = (baseOffset === 0 ? 2 : baseOffset + 1) + Math.floor(Math.random() * 8);
+
     gameObjects = [];
     bossMultiplesPool = [];
 
-    roomDisplay.innerText = "BOSS!!";
+    roomDisplay.innerText = `BOSS!! Cycle ${cycleCount}`;
     targetValDisplay.innerText = targetNum;
     checklistDisplay.innerHTML = `<b style="color:#0f380f">HIT MULTIPLES OF ${targetNum}!</b>`;
     updateHP();
 
-    const objectPoolSize = 10;
+    const objectPoolSize = 10 + (cycleCount * 2); // 隨等級增加物件數量
     const maxMultiplier = 12;
 
     for (let i = 0; i < objectPoolSize; i++) {
         let num;
         let isDistractor;
 
-        // 60% 機率生成正確倍數, 40% 生成干擾項
         if (Math.random() > 0.4) {
             let multiplier = Math.floor(Math.random() * maxMultiplier) + 1;
             num = targetNum * multiplier;
             isDistractor = false;
         } else {
-            // 生成一個不是倍數的數字
             do {
                 num = Math.floor(Math.random() * (targetNum * maxMultiplier)) + 2;
             } while (num % targetNum === 0);
@@ -228,7 +271,6 @@ function handleShot(sx, sy) {
                         score += 500;
                         isExiting = true;
                         gameObjects = [];
-                        checkWinCondition();
                         return;
                     }
                     gameObjects.splice(i, 1);
@@ -250,17 +292,9 @@ function handleShot(sx, sy) {
                 updateHP();
             }
             scoreDisplay.innerText = score;
-            checkWinCondition();
             if (!isBossMode) gameObjects.splice(i, 1);
             break;
         }
-    }
-}
-
-function checkWinCondition() {
-    if (score >= 1000 && gameActive) {
-        gameActive = false;
-        gameState = 'WIN';
     }
 }
 
@@ -274,6 +308,7 @@ function updateHP() {
     if (hp <= 0) {
         gameActive = false;
         gameState = 'GAMEOVER';
+        saveToLeaderboard(score, Math.floor(elapsedTime / 1000), cycleCount);
     }
 }
 
@@ -284,7 +319,7 @@ function resetGame() {
     hud.style.display = 'none';
     factorChecklist.style.display = 'none';
     instructions.style.display = 'none';
-    hp = 3; score = 0; roomCount = 1;
+    hp = 3; score = 0; roomCount = 1; cycleCount = 1;
 }
 
 function update() {
@@ -294,6 +329,9 @@ function update() {
         }
         return;
     }
+
+    elapsedTime = Date.now() - startTime;
+
     if (lastShot.timer > 0) lastShot.timer--;
     if (bossShake > 0) bossShake--;
 
@@ -308,10 +346,12 @@ function update() {
         if (player.y < canvas.height/2 - 20) player.y += 3;
         if (player.y > canvas.height/2 - 20) player.y -= 3;
         if (player.x > canvas.width) {
+            if (isBossMode) {
+                cycleCount++;
+            }
             roomCount++;
             score += 50;
             scoreDisplay.innerText = score;
-            checkWinCondition();
             initRoom();
         }
         return;
@@ -356,30 +396,46 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (gameState === 'MENU') return;
 
-    if (gameState === 'WIN') {
-        ctx.fillStyle = COLORS.darkest;
-        ctx.font = "bold 40px Arial";
-        ctx.textAlign = "center";
-        ctx.fillText("MISSION COMPLETE!", canvas.width/2, canvas.height/2);
-        ctx.font = "20px Arial";
-        ctx.fillText(`Score: ${score} | Phase 1 Mastered`, canvas.width/2, canvas.height/2 + 40);
-        ctx.fillText("Press [Space] to restart", canvas.width/2, canvas.height/2 + 80);
-        return;
-    }
-
     if (gameState === 'GAMEOVER') {
-        ctx.fillStyle = "red";
-        ctx.font = "bold 40px Arial";
+        ctx.fillStyle = "rgba(15, 56, 15, 0.9)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = COLORS.light;
         ctx.textAlign = "center";
-        ctx.fillText("WARRIOR FALLEN", canvas.width/2, canvas.height/2);
-        ctx.fillStyle = COLORS.darkest;
-        ctx.font = "20px Arial";
-        ctx.fillText("Press [Space] to try again", canvas.width/2, canvas.height/2 + 40);
+        ctx.font = "bold 40px Arial";
+        ctx.fillText("WARRIOR FALLEN", canvas.width/2, 80);
+
+        ctx.font = "24px Arial";
+        ctx.fillText(`Final Score: ${score}`, canvas.width/2, 130);
+        ctx.fillText(`Time: ${Math.floor(elapsedTime/1000)}s | Cycle: ${cycleCount}`, canvas.width/2, 165);
+
+        ctx.font = "bold 26px Arial";
+        ctx.fillText("--- LEADERBOARD ---", canvas.width/2, 220);
+
+        const lb = getLeaderboard();
+        if (lb.length === 0) {
+            ctx.font = "18px Arial";
+            ctx.fillText("No records yet!", canvas.width/2, 260);
+        } else {
+            lb.forEach((entry, i) => {
+                ctx.font = "18px Arial";
+                ctx.fillText(`#${i+1} - Score: ${entry.score} (Lvl ${entry.level}) - ${entry.time}s`, canvas.width/2, 260 + (i * 30));
+            });
+        }
+
+        ctx.font = "bold 22px Arial";
+        ctx.fillText("Press [Space] to restart", canvas.width/2, 450);
         return;
     }
 
     ctx.strokeStyle = COLORS.dark;
     ctx.strokeRect(5, 5, canvas.width - 10, canvas.height - 10);
+
+    // 顯示計時器
+    ctx.fillStyle = COLORS.darkest;
+    ctx.font = "bold 16px Arial";
+    ctx.textAlign = "right";
+    ctx.fillText(`Time: ${Math.floor(elapsedTime/1000)}s`, canvas.width - 20, 30);
 
     if (lastShot.timer > 0) {
         ctx.beginPath(); ctx.strokeStyle = COLORS.light; ctx.setLineDash([5, 5]);
