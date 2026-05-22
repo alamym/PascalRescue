@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node *)",
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "PowerShell(Expand-Archive *)",
+      "Bash(python C:\\\\Users\\\\Lam\\\\Desktop\\\\SzeMan\\\\convert_ms.py)",
+      "Bash(python *)",
+      "PowerShell(Rename-Item *)",
+      "Bash(dir *)",
+      "PowerShell(Get-ChildItem *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(gh api *)",
+      "Bash(git push *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node send_startup_msg.mjs"
+          },
+          {
+            "type": "command",
+            "command": "node telegram_bot.mjs",
+            "statusMessage": "Starting SzeMan Telegram Bot...",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "dark"
+}

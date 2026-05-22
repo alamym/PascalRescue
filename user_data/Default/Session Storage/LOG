@@ -1,0 +1,14 @@
+2026/05/16-02:20:54.875 433c Reusing MANIFEST C:\Users\Lam\Desktop\SzeMan\user_data\Default\Session Storage/MANIFEST-000001
+2026/05/16-02:20:54.878 433c Recovering log #29
+2026/05/16-02:20:54.879 433c Level-0 table #31: started
+2026/05/16-02:20:54.991 433c Level-0 table #31: 27268 bytes OK
+2026/05/16-02:20:55.080 433c Delete type=0 #29
+2026/05/16-02:20:55.081 3c38 Compacting 4@0 + 1@1 files
+2026/05/16-02:20:55.437 3c38 Generated table #33@0: 65 keys, 109080 bytes
+2026/05/16-02:20:55.437 3c38 Compacted 4@0 + 1@1 files => 109080 bytes
+2026/05/16-02:20:55.554 3c38 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/05/16-02:20:55.555 3c38 Delete type=2 #22
+2026/05/16-02:20:55.555 3c38 Delete type=2 #24
+2026/05/16-02:20:55.556 3c38 Delete type=2 #26
+2026/05/16-02:20:55.556 3c38 Delete type=2 #28
+2026/05/16-02:20:55.556 3c38 Delete type=2 #31

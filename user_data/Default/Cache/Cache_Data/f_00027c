@@ -1,0 +1,1441 @@
+@fluentui/style-utilities v8.14.0 - MIT license (https://github.com/microsoft/fluentui)
+
+react v18.3.1 - MIT license (https://github.com/facebook/react.git)
+
+@fluentui/react v8.125.4 - MIT license (https://github.com/microsoft/fluentui)
+
+memory-cache v0.2.0 - Paul Tarjan <npm@paulisageek.com> - BSD-2-Clause license (git://github.com/ptarjan/node-cache.git)
+
+@fluentui/react-components v9.72.9 - MIT license (https://github.com/microsoft/fluentui)
+
+@microsoft/1ds-core-js v4.3.6 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/shared/1ds-core-js)
+
+@microsoft/1ds-post-js v4.3.6 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/channels/1ds-post-js)
+
+mobx v6.13.7 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+
+tslib v2.8.1 - Microsoft Corp. - 0BSD license (https://github.com/Microsoft/tslib.git)
+
+@fluentui/merge-styles v8.6.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@microsoft/load-themed-styles v1.10.293 - MIT license (https://github.com/microsoft/rushstack.git)
+
+@fluentui/utilities v8.17.2 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/theme v2.7.2 - MIT license (https://github.com/microsoft/fluentui)
+
+@apollo/client v3.7.7 - packages@apollographql.com - MIT license (git+https://github.com/apollographql/apollo-client.git)
+
+buffer v6.0.3 - Feross Aboukhadijeh - MIT license (git://github.com/feross/buffer.git)
+
+raf v3.4.1 - Chris Dickinson <chris@neversaw.us> - MIT license (git://github.com/chrisdickinson/raf.git)
+
+reflect-metadata v0.1.13 - Ron Buckton - Apache-2.0 license (https://github.com/rbuckton/reflect-metadata.git)
+
+@fluentui/react-provider v9.22.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tabster v9.26.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-theme v9.2.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@griffel/react v1.5.32 - MIT license (https://github.com/microsoft/griffel)
+
+@fluentui/react-shared-contexts v9.26.2 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-utilities v9.26.3 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-badge v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-avatar v9.9.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-accordion v9.8.15 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-combobox v9.16.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-input v9.7.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-divider v9.5.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-button v9.7.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-image v9.3.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-link v9.7.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-label v9.3.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-checkbox v9.5.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-menu v9.20.6 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-popover v9.12.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-select v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-portal v9.8.9 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-skeleton v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-slider v9.5.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-radio v9.5.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-persona v9.5.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-spinbutton v9.5.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-spinner v9.7.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tabs v9.10.8 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-text v9.6.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-switch v9.5.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-textarea v9.6.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tooltip v9.8.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-positioning v9.20.11 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-progress v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-dialog v9.16.5 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-table v9.19.6 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-overflow v9.6.6 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-field v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-toolbar v9.6.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-toast v9.7.10 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-message-bar v9.6.16 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-card v9.5.8 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-infolabel v9.4.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tree v9.15.8 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tags v9.7.13 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-rating v9.3.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-aria v9.17.7 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-breadcrumb v9.3.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-drawer v9.11.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-search v9.3.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-tag-picker v9.7.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-teaching-popover v9.6.14 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-swatch-picker v9.4.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-list v9.6.7 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-motion v9.11.5 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-carousel v9.9.0 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-color-picker v9.2.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/react-nav v9.3.16 - MIT license (https://github.com/microsoft/fluentui)
+
+comlink v4.4.2 - Surma - Apache-2.0 license (https://github.com/GoogleChromeLabs/comlink.git)
+
+lodash-es v4.18.1 - John-David Dalton <john.david.dalton@gmail.com> - MIT license
+
+satcheljs v4.3.1 - MIT license (https://github.com/microsoft/satcheljs.git)
+
+@fluentui/set-version v8.2.24 - MIT license (https://github.com/microsoft/fluentui)
+
+@microsoft/applicationinsights-core-js v3.3.6 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/shared/AppInsightsCore)
+
+graphql v15.10.1 - MIT license (https://github.com/graphql/graphql-js.git)
+
+whatwg-fetch v1.1.1 - MIT license
+
+base64-js v1.5.1 - T. Jameson Little <t.jameson.little@gmail.com> - MIT license (git://github.com/beatgammit/base64-js.git)
+
+ieee754 v1.2.1 - Feross Aboukhadijeh - BSD-3-Clause license (git://github.com/feross/ieee754.git)
+
+tabster v8.5.6 - Marat Abdullin <marata@microsoft.com> - MIT license (git+https://github.com/microsoft/tabster)
+
+@fluentui/tokens v1.0.0-alpha.23 - MIT license (https://github.com/microsoft/fluentui)
+
+keyborg v2.6.0 - Marat Abdullin <marata@microsoft.com> - MIT license (git+https://github.com/microsoft/keyborg)
+
+@azure/msal-browser-1p v4.28.2 - Microsoft - MIT license (https://identitydivision.visualstudio.com/DefaultCollection/Engineering/_git/msal-js-test)
+
+@azure/msal-common v15.14.2 - Microsoft - MIT license (https://github.com/AzureAD/microsoft-authentication-library-for-js.git)
+
+@microsoft/applicationinsights-shims v3.0.1 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/tools/shims)
+
+@microsoft/dynamicproto-js v2.0.3 - Microsoft Application Insights Team - MIT license (git+https://github.com/microsoft/DynamicProto-JS.git)
+
+@fluentui/react-window-provider v2.3.2 - MIT license (https://github.com/microsoft/fluentui)
+
+@nevware21/ts-async v0.5.4 - NevWare21 Solutions LLC - MIT license (https://github.com/nevware21/ts-async.git)
+
+@nevware21/ts-utils v0.12.3 - Nevware21 Solutions LLC - MIT license (https://github.com/nevware21/ts-utils.git)
+
+@fluentui/react-hooks v8.10.2 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/date-time-utilities v8.6.11 - MIT license (https://github.com/microsoft/fluentui)
+
+ts-invariant v0.10.3 - Ben Newman <ben@apollographql.com> - MIT license (git+https://github.com/apollographql/invariant-packages.git)
+
+graphql-tag v2.12.6 - MIT license (git+https://github.com/apollographql/graphql-tag.git)
+
+react-dom v18.3.1 - MIT license (https://github.com/facebook/react.git)
+
+@microsoft/1ds-properties-js v4.3.6 - Javascript Telemetry SDKs <TelReachSDK@microsoft.com> - ISC license (https://msazure.visualstudio.com/One/_git/1DS.JavaScript.PartA)
+
+@fluentui/react-icons v2.0.320 - MIT license (https://github.com/microsoft/fluentui-system-icons.git)
+
+performance-now v2.1.0 - Braveg1rl <braveg1rl@outlook.com> - MIT license (git://github.com/braveg1rl/performance-now.git)
+
+@fluentui/react-context-selector v9.2.13 - MIT license (https://github.com/microsoft/fluentui)
+
+resize-observer-polyfill v1.5.1 - Denis Rul <que.etc@gmail.com> - MIT license (https://github.com/que-etc/resize-observer-polyfill.git)
+
+@fluentui/keyboard-keys v9.0.8 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/priority-overflow v9.2.1 - MIT license (https://github.com/microsoft/fluentui)
+
+@swc/helpers v0.5.17 - 강동윤 <kdy1997.dev@gmail.com> - Apache-2.0 license (git+https://github.com/swc-project/swc.git)
+
+@griffel/core v1.19.2 - MIT license (https://github.com/microsoft/griffel)
+
+classnames v2.3.2 - Jed Watson - MIT license (https://github.com/JedWatson/classnames.git)
+
+relay-runtime v19.0.0 - MIT license (https://github.com/facebook/relay.git)
+
+@fluentui/dom-utilities v2.3.10 - MIT license (https://github.com/microsoft/fluentui)
+
+@azure/msal-browser v4.28.2 - Microsoft - MIT license (https://github.com/AzureAD/microsoft-authentication-library-for-js.git)
+
+react-relay v19.0.0 - MIT license (https://github.com/facebook/relay.git)
+
+mobx-react v9.2.0 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+
+@nova/react v2.9.0 - MIT license (https://github.com/microsoft/nova-facade.git)
+
+@fluentui/react-focus v8.10.4 - MIT license (https://github.com/microsoft/fluentui)
+
+@wry/equality v0.5.1 - Ben Newman <ben@eloper.dev> - MIT license (git+https://github.com/benjamn/wryware.git)
+
+symbol-observable v1.2.0 - Ben Lesh - MIT license
+
+zen-observable-ts v1.2.5 - MIT license (git+https://github.com/apollographql/zen-observable-ts.git)
+
+use-sync-external-store v1.5.0 - MIT license (https://github.com/facebook/react.git)
+
+@floating-ui/dom v1.6.13 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+
+@floating-ui/devtools v0.2.3 - MIT license (https://github.com/floating-ui/floating-ui.git)
+
+querystring v0.2.0 - Irakli Gozalishvili <rfobic@gmail.com> - MIT license (git://github.com/Gozala/querystring.git)
+
+lottie-web v5.12.2 - MIT license (https://github.com/airbnb/lottie-web.git)
+
+@fluentui/react-motion-components-preview v0.6.2 - MIT license (https://github.com/microsoft/fluentui)
+
+hash.js v1.1.7 - Fedor Indutny <fedor@indutny.com> - MIT license (git@github.com:indutny/hash.js)
+
+@emotion/hash v0.9.1 - MIT license
+
+css-loader v6.8.1 - Tobias Koppers @sokra - MIT license
+
+jwt-decode v2.2.0 - Jose F. Romaniello <jfromaniello@gmail.com> (http://joseoncode.com) - MIT license (git://github.com/auth0/jwt-decode)
+
+@microsoft/teams-js v2.39.1 - Microsoft Teams - MIT license (https://github.com/OfficeDev/microsoft-teams-library-js)
+
+color-convert v2.0.1 - Heather Arthur <fayearthur@gmail.com> - MIT license
+
+color-string v2.0.1 - Heather Arthur <fayearthur@gmail.com> - MIT license
+
+@fluentui/react-portal-compat v9.2.1 - MIT license (https://github.com/microsoft/fluentui)
+
+ts-md5 v1.2.0 - MIT license (git+https://github.com/cotag/ts-md5.git)
+
+@fluentui-contrib/react-headless-provider v1.0.3 - MIT license (https://github.com/microsoft/fluentui-contrib)
+
+@ctrl/tinycolor v3.6.1 - Scott Cooper <scttcper@gmail.com> - MIT license
+
+scheduler v0.23.2 - MIT license (https://github.com/facebook/react.git)
+
+@microsoft/1ds-analytics-js v4.3.6 - Javascript Telemetry SDKs <TelReachSDK@microsoft.com> - ISC license (https://msazure.visualstudio.com/One/_git/1DS.JavaScript)
+
+@wry/trie v0.3.0 - Ben Newman <ben@eloper.dev> - MIT license (git+https://github.com/benjamn/wryware.git)
+
+@wry/context v0.7.0 - Ben Newman <ben@eloper.dev> - MIT license (git+https://github.com/benjamn/wryware.git)
+
+mobx-utils v6.0.5 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx-utils.git)
+
+@floating-ui/utils v0.2.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+
+@floating-ui/core v1.6.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+
+@fluentui/react-jsx-runtime v9.3.4 - MIT license (https://github.com/microsoft/fluentui)
+
+rtl-css-js v1.16.1 - Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/) - MIT license (https://github.com/kentcdodds/rtl-css-js.git)
+
+stylis v4.3.6 - Sultan Tarimo <sultantarimo@me.com> - MIT license
+
+minimalistic-assert v1.0.1 - ISC license (https://github.com/calvinmetcalf/minimalistic-assert.git)
+
+react-transition-group v4.4.5 - BSD-3-Clause license (https://github.com/reactjs/react-transition-group.git)
+
+invariant v2.2.4 - Andres Suarez <zertosh@gmail.com> - MIT license
+
+@nova/types v1.7.0 - MIT license (https://github.com/microsoft/nova-facade.git)
+
+mobx-react-lite v4.1.0 - Daniel K. - MIT license (https://github.com/mobxjs/mobx.git)
+
+@graphitation/graphql-js-tag v0.9.4 - MIT license (https://github.com/microsoft/graphitation.git)
+
+dexie v4.0.10 - David Fahlander <https://github.com/dfahlander> - Apache-2.0 license (https://github.com/dexie/Dexie.js.git)
+
+graphql-parse-resolve-info v4.11.0 - Benjie Gillam <code@benjiegillam.com> - MIT license (git+https://github.com/graphile/graphile-engine.git)
+
+use-debounce v6.0.1 - Nikita Mostovoy (nik.mostovoy@gmail.com) - MIT license (git+ssh://git@github.com/xnimorz/use-debounce.git)
+
+url v0.10.3 - MIT license (https://github.com/defunctzombie/node-url.git)
+
+color-name v2.0.0 - DY <dfcreative@gmail.com> - MIT license (git@github.com:colorjs/color-name.git)
+
+@microsoft/1ds-privacy-guard-js v4.3.6 - Office Privacy Guard Feature Crew <privacygfc@microsoft.com> - ISC license (https://msazure.visualstudio.com/One/_git/1DS.JavaScript?path=/extensions/privacyGuard)
+
+@microsoft/applicationinsights-offlinechannel-js v0.3.6 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/channels/offline-channel-js)
+
+@fluentui/react-portal-compat-context v9.0.15 - MIT license (https://github.com/microsoft/fluentui)
+
+@babel/runtime v7.27.1 - The Babel Team (https://babel.dev/team) - MIT license (https://github.com/babel/babel.git)
+
+embla-carousel v8.6.0 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+
+embla-carousel-fade v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+
+embla-carousel-autoplay v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+
+fbjs v3.0.5 - MIT license
+
+inherits v2.0.4 - ISC license
+
+dom-helpers v5.2.1 - Jason Quense - MIT license (git+https://github.com/react-bootstrap/dom-helpers.git)
+
+prop-types v15.8.1 - MIT license
+
+web-common-diagnostics-stack v2.1.2 - Di Sun - ISC license
+
+@fluentui/font-icons-mdl2 v8.5.71 - MIT license (https://github.com/microsoft/fluentui)
+
+@dnd-kit/sortable v7.0.1 - Claudéric Demers - MIT license (git+https://github.com/clauderic/dnd-kit.git)
+
+@dnd-kit/modifiers v9.0.0 - Claudéric Demers - MIT license (git+https://github.com/clauderic/dnd-kit.git)
+
+uuid v8.3.2 - MIT license (https://github.com/uuidjs/uuid.git)
+
+@dnd-kit/utilities v3.2.2 - Claudéric Demers - MIT license (git+https://github.com/clauderic/dnd-kit.git)
+
+debug v2.6.9 - TJ Holowaychuk <tj@vision-media.ca> - MIT license (git://github.com/visionmedia/debug.git)
+
+assert v2.1.0 - MIT license
+
+@1js/office-online-draggable-floatie v10.1.874 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+punycode v2.3.1 - Mathias Bynens - MIT license (https://github.com/mathiasbynens/punycode.js.git)
+
+dataloader v2.2.2 - MIT license (http://github.com/graphql/dataloader.git)
+
+@modelcontextprotocol/sdk v1.27.1 - Anthropic, PBC (https://anthropic.com) - MIT license (git+https://github.com/modelcontextprotocol/typescript-sdk.git)
+
+@graphql-tools/schema v8.5.1 - MIT license (ardatan/graphql-tools)
+
+zod v3.25.76 - Colin McDonnell <zod@colinhacks.com> - MIT license (git+https://github.com/colinhacks/zod.git)
+
+react-is v18.3.1 - MIT license (https://github.com/facebook/react.git)
+
+@fluentui/react-file-type-icons v8.15.3 - MIT license (https://github.com/microsoft/fluentui)
+
+@fluentui/foundation-legacy v8.6.4 - MIT license (https://github.com/microsoft/fluentui)
+
+util v0.12.5 - Joyent - MIT license (git://github.com/browserify/node-util)
+
+call-bind v1.0.8 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/call-bind.git)
+
+object-is v1.1.5 - Jordan Harband - MIT license (git://github.com/es-shims/object-is.git)
+
+object.assign v4.1.7 - Jordan Harband - MIT license (git://github.com/ljharb/object.assign.git)
+
+@dnd-kit/accessibility v3.1.1 - Claudéric Demers - MIT license (git+https://github.com/clauderic/dnd-kit.git)
+
+@1js/office-dictation v5.1.6 - MIT license (https://office.visualstudio.com/OC/_git/office-online-ui)
+
+@microsoft/signalr v6.0.5 - Microsoft - MIT license (git+https://github.com/dotnet/aspnetcore.git)
+
+semver v7.7.4 - GitHub Inc. - ISC license (git+https://github.com/npm/node-semver.git)
+
+@microsoft/applicationinsights-common v3.3.6 - Microsoft Application Insights Team - MIT license (https://github.com/microsoft/ApplicationInsights-JS/tree/main/shared/AppInsightsCommon)
+
+zod-to-json-schema v3.25.1 - Stefan Terdell - ISC license (https://github.com/StefanTerdell/zod-to-json-schema)
+
+dompurify v3.4.0 - Dr.-Ing. Mario Heiderich, Cure53 <mario@cure53.de> (https://cure53.de/) - (MPL-2.0 OR Apache-2.0) license (git://github.com/cure53/DOMPurify.git)
+
+redux-thunk v2.3.0 - Dan Abramov <dan.abramov@me.com> - MIT license
+
+redux v4.0.5 - MIT license
+
+redux-immutable-state-invariant v2.1.0 - Leonardo Andres Garcia Crespo <leoasis@gmail.com> - MIT license
+
+@1js/acui-ribbon-like v24.0.23 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-button v18.3.38 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-combobox v9.0.203 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-common v17.2.78 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-experiments v28.0.28 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-context v7.1.493 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-dictation v9.1.447 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-theme v10.1.189 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-tooltip v8.0.162 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+react-hook-form v7.54.2 - <bluebill1049@hotmail.com> - MIT license (https://github.com/react-hook-form/react-hook-form)
+
+is-nan v1.3.2 - Jordan Harband - MIT license (git://github.com/es-shims/is-nan.git)
+
+get-intrinsic v1.3.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/get-intrinsic.git)
+
+ms v2.1.3 - MIT license
+
+react-virtuoso v4.13.0 - Petyo Ivanov - MIT license (https://github.com/petyosi/react-virtuoso.git)
+
+file-saver v1.3.8 - Eli Grey - MIT license (git+https://github.com/eligrey/FileSaver.js.git)
+
+object-sizeof v1.6.3 - Andrei Karpushonak - MIT license (git://github.com/miktam/sizeof.git)
+
+react-inspector v2.3.1 - Xiaoyi Chen <cxychina@gmail.com> (http://github.com/xyc) - MIT license (https://github.com/xyc/react-inspector.git)
+
+adaptivecards v3.0.5 - AdaptiveCards - MIT license (git://git@github.com/microsoft/AdaptiveCards.git)
+
+@outlook/unified_telemetry v0.0.431 - Microsoft Corporation - ISC license
+
+@microsoft/oteljs v4.25.11 - SDX Telemetry <SDXTelemetry@service.microsoft.com> - MIT license (https://office.visualstudio.com/DefaultCollection/OE/Telemetry%20Metrics%20and%20Consumption/_git/OTEL-OTelJS)
+
+@microsoft/oteljs-1ds v4.25.11 - SDX Telemetry <SDXTelemetry@service.microsoft.com> - MIT license (https://office.visualstudio.com/DefaultCollection/OE/Telemetry%20Metrics%20and%20Consumption/_git/OTEL-OTelJS)
+
+@graphql-tools/utils v9.2.1 - Dotan Simha <dotansimha@gmail.com> - MIT license (ardatan/graphql-tools)
+
+@graphql-tools/merge v8.4.2 - Dotan Simha <dotansimha@gmail.com> - MIT license (ardatan/graphql-tools)
+
+ajv v8.18.0 - Evgeny Poberezkin - MIT license
+
+ajv-formats v3.0.1 - Evgeny Poberezkin - MIT license (git+https://github.com/ajv-validator/ajv-formats.git)
+
+json-stringify-safe v5.0.1 - Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me) - ISC license (git://github.com/isaacs/json-stringify-safe)
+
+@fluentui-copilot/react-flair v0.5.18 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-copilot v0.28.5 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluidframework/driver-web-cache v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+call-bind-apply-helpers v1.0.2 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/call-bind-apply-helpers.git)
+
+has-symbols v1.1.0 - Jordan Harband - MIT license (git://github.com/inspect-js/has-symbols.git)
+
+set-function-length v1.2.2 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/set-function-length.git)
+
+es-define-property v1.0.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/es-define-property.git)
+
+object-keys v1.1.1 - Jordan Harband - MIT license (git://github.com/ljharb/object-keys.git)
+
+es-object-atoms v1.1.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/es-object-atoms.git)
+
+call-bound v1.0.4 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/call-bound.git)
+
+define-properties v1.2.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git://github.com/ljharb/define-properties.git)
+
+is-arguments v1.2.0 - Jordan Harband - MIT license (git://github.com/inspect-js/is-arguments.git)
+
+which-typed-array v1.1.19 - Jordan Harband - MIT license (git://github.com/inspect-js/which-typed-array.git)
+
+is-generator-function v1.0.10 - Jordan Harband <ljharb@gmail.com> - MIT license (git://github.com/inspect-js/is-generator-function.git)
+
+is-typed-array v1.1.15 - Jordan Harband - MIT license (git://github.com/inspect-js/is-typed-array.git)
+
+es-errors v1.3.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/es-errors.git)
+
+get-proto v1.0.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/get-proto.git)
+
+math-intrinsics v1.1.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/es-shims/math-intrinsics.git)
+
+hasown v2.0.2 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/inspect-js/hasOwn.git)
+
+gopd v1.2.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/gopd.git)
+
+function-bind v1.1.2 - Raynos <raynos2@gmail.com> - MIT license (https://github.com/Raynos/function-bind.git)
+
+roosterjs-content-model-dom v9.51.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+babel-runtime v6.26.0 - Sebastian McKenzie <sebmck@gmail.com> - MIT license
+
+is-dom v1.1.0 - MIT license
+
+@1js/acui-icons v7.1.231 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+js-sha256 v0.10.1 - Chen, Yi-Cyuan <emn178@gmail.com> - MIT license (https://github.com/emn178/js-sha256.git)
+
+@commonschema/blackstone-core v0.3.0 - IDEAs Blackstone FC (ideasblackstonefc@microsoft.com) - ISC license
+
+roosterjs-content-model-api v9.51.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+roosterjs-editor-dom v8.62.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+reselect v4.1.6 - MIT license (https://github.com/reduxjs/reselect.git)
+
+react-redux v7.2.9 - Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon) - MIT license
+
+@1js/acui-dialog v13.3.125 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-label v8.1.355 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/string-enum v2.1.310 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-toggle v7.2.174 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+is-mobile v3.1.1 - Julian Gruber - MIT license (git://github.com/juliangruber/is-mobile.git)
+
+@fluentui-copilot/react-provider v0.12.7 - MIT license (https://github.com/microsoft/fluentai)
+
+date-fns v1.29.0 - Sasha Koss <koss@nocorp.me> - MIT license
+
+debounce v1.2.1 - MIT license
+
+react-markdown v8.0.7 - Espen Hovlandsdal <espen@hovlandsdal.com> - MIT license
+
+@fluentui-copilot/react-capability-picker v0.0.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-morse-code v0.0.12 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-copilot-chat v0.12.4 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-chain-of-thought v0.2.2 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-entity-cards v0.4.8 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/tokens v0.3.15 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-suggestions v0.12.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-feedback-buttons v0.12.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-output-card v0.12.4 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-prompt-input v0.10.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-first-run-experience v0.9.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-attachments v0.13.8 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-prompt-starter v0.10.9 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-prompt-listbox v0.10.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-latency v0.11.9 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-preview v0.8.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-send-button v0.1.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-sensitivity-label v0.8.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-snippet v0.2.23 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-reference v0.16.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-response-count v0.2.21 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-text v0.1.9 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-textarea v0.11.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-grounding-menu v0.2.8 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-chat-input v0.15.4 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-chat-input-plugins v0.5.8 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/chat-input-plugins v0.5.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-text-editor v0.4.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/text-editor v0.3.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-editor-input v0.5.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-copilot-theme v0.1.11 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-copilot/react-copilot-nav v0.1.5 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluidframework/odsp-driver v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/container-loader v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/container-definitions v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/odsp-driver-definitions v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/driver-definitions v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/core-interfaces v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+has-tostringtag v1.0.2 - Jordan Harband - MIT license (git+https://github.com/inspect-js/has-tostringtag.git)
+
+define-data-property v1.1.4 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/define-data-property.git)
+
+has-property-descriptors v1.0.2 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/inspect-js/has-property-descriptors.git)
+
+available-typed-arrays v1.0.7 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/inspect-js/available-typed-arrays.git)
+
+for-each v0.3.5 - Raynos <raynos2@gmail.com> - MIT license (https://github.com/Raynos/for-each.git)
+
+dunder-proto v1.0.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/es-shims/dunder-proto.git)
+
+@notes/webintegrations-common v0.1.48 - ISC license
+
+immutable v3.8.3 - Lee Byron - MIT license (git://github.com/immutable-js/immutable-js.git)
+
+react-flip-toolkit v7.0.13 - Alex Holachek - MIT license (https://github.com/aholachek/react-flip-toolkit)
+
+@1js/al-voice-client v5.0.8 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+roosterjs-content-model-core v9.51.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+is-window v1.0.2 - bubkoo - MIT license (git+https://github.com/gearcase/is-window.git)
+
+is-object v1.0.2 - Raynos <raynos2@gmail.com> - MIT license
+
+memoize-one v5.2.1 - Alex Reardon <alexreardon@gmail.com> - MIT license (https://github.com/alexreardon/memoize-one.git)
+
+squee v1.1.0 - Josh Goldberg <joshuakgoldberg@outlook.com> - MIT license (git+https://github.com/joshuakgoldberg/squee.git)
+
+@azure/core-rest-pipeline v1.10.0 - Microsoft Corporation - MIT license
+
+@azure/core-client v1.9.2 - Microsoft Corporation - MIT license
+
+react-shadow v20.0.0 - Adam Timberlake <adam.timberlake@gmail.com> - MIT license
+
+markdown-it v12.3.2 - MIT license
+
+htmlparser2 v3.10.1 - Felix Boehm <me@feedic.com> - MIT license (git://github.com/fb55/htmlparser2.git)
+
+selderee v0.11.0 - KillyMXI - MIT license (git+https://github.com/mxxii/selderee.git)
+
+deepmerge v4.3.1 - MIT license (git://github.com/TehShrike/deepmerge.git)
+
+@selderee/plugin-htmlparser2 v0.11.0 - KillyMXI - MIT license (git+https://github.com/mxxii/selderee.git)
+
+dom-serializer v2.0.0 - Felix Boehm <me@feedic.com> - MIT license (git://github.com/cheeriojs/dom-serializer.git)
+
+murmurhash-js v1.0.0 - Gary Court - MIT license (git://github.com/mikolalysenko/murmurhash-js.git)
+
+fast-levenshtein v2.0.6 - Ramesh Nair <ram@hiddentao.com> (http://www.hiddentao.com/) - MIT license (https://github.com/hiddentao/fast-levenshtein.git)
+
+@1js/acui-gallery v12.3.120 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-memoization v6.1.362 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-search-box v8.1.232 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-menu v14.0.38 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-keytip v6.2.418 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-font-picker v15.3.583 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-link v7.1.172 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+fuse.js v7.0.0 - Kiro Risk - Apache-2.0 license (https://github.com/krisk/Fuse.git)
+
+array-equal v1.0.0 - Jonathan Ong - MIT license
+
+react-dropzone v14.3.8 - Param Aggarwal - MIT license (https://github.com/react-dropzone/react-dropzone.git)
+
+@fluentui-copilot/flair v0.4.13 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentui-contrib/houdini-utils v0.3.5 - MIT license (https://github.com/microsoft/fluentui-contrib)
+
+highlight.js v11.8.0 - Josh Goebel <hello@joshgoebel.com> - BSD-3-Clause license (git://github.com/highlightjs/highlight.js.git)
+
+file-selector v2.1.2 - Roland Groza - MIT license (https://github.com/react-dropzone/file-selector.git)
+
+mdast-util-gfm v2.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm v2.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@lexical/react v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@fluentui-copilot/react-input-listbox v0.4.7 - MIT license (https://github.com/microsoft/fluentai)
+
+lexical v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/utils v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/selection v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/plain-text v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/list v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/rich-text v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/text v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/headless v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@fluidframework/core-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/telemetry-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/driver-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluentui/react-datepicker-compat v0.6.1 - MIT license (https://github.com/microsoft/fluentui)
+
+possible-typed-array-names v1.0.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/possible-typed-array-names.git)
+
+is-callable v1.2.7 - Jordan Harband - MIT license (git://github.com/inspect-js/is-callable.git)
+
+events v3.3.0 - Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com) - MIT license (git://github.com/Gozala/events.git)
+
+image-compressor.js v1.1.4 - Chen Fengyuan - MIT license
+
+tlds v1.214.0 - Stephen Mathieson <me@stephenmathieson.com> - MIT license
+
+draft-js v0.11.7 - MIT license
+
+draft-convert v2.1.10 - bbriggs@hubspot.com - Apache-2.0 license
+
+linkify-it v4.0.1 - MIT license
+
+@notes/aria-common-schema-logger v0.2.45 - Microsoft - MIT license (ssh://office@vs-ssh.visualstudio.com:22/DefaultCollection/OneNote/_ssh/aria-common-schema-logger-web)
+
+flip-toolkit v7.0.13 - Alex Holachek - MIT license (https://github.com/aholachek/react-flip-toolkit)
+
+hoist-non-react-statics v3.3.2 - Michael Ridgway <mcridgway@gmail.com> - BSD-3-Clause license (git://github.com/mridgway/hoist-non-react-statics.git)
+
+@1js/office-online-telemetry v5.18.181 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/office-online-otel v15.5.14 - SDX Telemetry <SDXTelemetry@service.microsoft.com> - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+regenerator-runtime v0.14.0 - Ben Newman <bn@cs.stanford.edu> - MIT license (https://github.com/facebook/regenerator/tree/main/packages/runtime)
+
+core-js v2.6.12 - MIT license (https://github.com/zloirock/core-js.git)
+
+@1js/office-online-change-gates v7.0.269 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+inversify v6.0.1 - Remo H. Jansen - MIT license (https://github.com/inversify/InversifyJS.git)
+
+postal-mime v2.6.0 - Andris Reinman - MIT-0 license (git+https://github.com/postalsys/postal-mime.git)
+
+parseley v0.12.1 - KillyMXI - MIT license (git+https://github.com/mxxii/parseley.git)
+
+domhandler v5.0.3 - Felix Boehm <me@feedic.com> - BSD-2-Clause license (git://github.com/fb55/domhandler.git)
+
+entities v4.5.0 - Felix Boehm <me@feedic.com> - BSD-2-Clause license (git://github.com/fb55/entities.git)
+
+domelementtype v2.3.0 - Felix Boehm <me@feedic.com> - BSD-2-Clause license (git://github.com/fb55/domelementtype.git)
+
+json-schema-traverse v0.4.1 - Evgeny Poberezkin - MIT license (git+https://github.com/epoberezkin/json-schema-traverse.git)
+
+fast-uri v3.1.0 - Vincent Le Goff <vince.legoff@gmail.com> (https://github.com/zekth) - BSD-3-Clause license (git+https://github.com/fastify/fast-uri.git)
+
+fast-deep-equal v3.1.3 - Evgeny Poberezkin - MIT license (git+https://github.com/epoberezkin/fast-deep-equal.git)
+
+domutils v3.1.0 - Felix Boehm <me@feedic.com> - BSD-2-Clause license (git://github.com/fb55/domutils.git)
+
+hellojs v1.20.0 - Andrew Dodson - MIT license (https://github.com/MrSwitch/hello.js.git)
+
+@iabtechlabtcf/core v1.5.15 - Mayank Mishra <mayank@iabtechlab.com> - Apache-2.0 license (https://github.com/InteractiveAdvertisingBureau/iabtcf-es.git)
+
+@fluentui/react-calendar-compat v0.3.9 - MIT license (https://github.com/microsoft/fluentui)
+
+@1js/acui-paint-timing v7.1.577 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-shadow-rendering v6.1.493 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-focusable-div v6.1.494 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-error-view v6.1.121 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-input v8.1.271 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-multiaction-button v8.0.528 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-checkbox v9.1.272 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-resize-group v7.0.130 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-color-picker v7.2.124 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-gallery-character-code v6.1.703 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-gallery-list v6.1.703 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-gallery-icon v7.1.360 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-gallery-font-styles v7.2.120 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+eventemitter3 v3.1.2 - Arnout Kazemier - MIT license (git://github.com/primus/eventemitter3.git)
+
+isomorphic-ws v5.0.0 - @heineiuo - MIT license (git+https://github.com/heineiuo/isomorphic-ws.git)
+
+cross-fetch v3.1.5 - Leonardo Quixada <lquixada@gmail.com> - MIT license (https://github.com/lquixada/cross-fetch.git)
+
+double-ended-queue v2.1.0-0 - Petka Antonov - MIT license (git://github.com/petkaantonov/deque.git)
+
+@microsoft-edu/immersive-reader-sdk v1.0.0 - MIT license
+
+@webauthjs/microsoft.office.webauth.abt v3.0.8 - ICE Service Owners (iceserviceowners@microsoft.com) - ISC license (https://office.visualstudio.com/ISS/_git/WebAuthJS)
+
+attr-accept v2.2.5 - Andrey Okonetchnikov @okonetchnikov - MIT license (https://github.com/react-dropzone/attr-accept.git)
+
+vfile v5.3.7 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unified v10.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+remark-parse v10.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+remark-rehype v10.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-combine-extensions v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-footnote v1.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-autolink-literal v1.0.5 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-table v1.0.7 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-strikethrough v1.0.7 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-task-list-item v1.0.5 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-gfm-tagfilter v1.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+singleton-state v1.0.1 - Steffen Viken Valvåg - MIT license (https://github.com/steffenvv/singleton-state)
+
+intl-tel-input v17.0.12 - Jack O'Connor (http://jackocnr.com) - MIT license (https://github.com/jackocnr/intl-tel-input.git)
+
+@fluentui-copilot/morse-code v0.0.10 - MIT license (https://github.com/microsoft/fluentai)
+
+katex v0.16.21 - MIT license (https://github.com/KaTeX/KaTeX.git)
+
+rehype-raw v6.1.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+rehype-katex v6.0.3 - Junyoung Choi <fluke8259@gmail.com> (https://rokt33r.github.io) - MIT license
+
+rehype-highlight v5.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+rehype-sanitize v5.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+remark-math v5.1.1 - Junyoung Choi <fluke8259@gmail.com> (https://rokt33r.github.io) - MIT license
+
+rehype-stringify v9.0.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unist-util-visit v4.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluidframework/driver-base v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/odsp-doclib-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/runtime-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluid-internal/client-utils v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+idb v6.1.5 - Jake Archibald - ISC license (git://github.com/jakearchibald/idb.git)
+
+@commonschema/oteljs-schema-pu v2.0.2 - IDEAs UDP - ISC license
+
+@asha/js-contracts v1.2.6 - ashafc - ISC license (https://dev.azure.com/O365Exchange/O365%20Core/_git/IDEAsASHA)
+
+@fluidframework/aqueduct v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/datastore v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluentui/react-charting v5.23.12 - MIT license (https://github.com/microsoft/fluentui)
+
+@christiango/scheduler-polyfill v1.0.4 - The Chromium Authors - Apache-2.0 license (git+https://github.com/christiango/scheduler-polyfill.git)
+
+lock v1.1.0 - Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com) - MIT license (git://github.com/dominictarr/lock.git)
+
+mark.js v8.11.1 - Julian Kühnel - MIT license
+
+rematrix v0.2.2 - Julian Lloyd <rematrix@jlmak.es> - MIT license
+
+diff-match-patch v1.0.5 - Apache-2.0 license (https://github.com/JackuB/diff-match-patch.git)
+
+@azure/core-tracing v1.0.1 - Microsoft Corporation - MIT license
+
+@azure/logger v1.0.4 - Microsoft Corporation - MIT license
+
+@azure/abort-controller v1.1.0 - Microsoft Corporation - MIT license
+
+@azure/core-util v1.9.0 - Microsoft Corporation - MIT license
+
+mdurl v1.0.1 - MIT license
+
+adaptivecards-v1 v1.3.1 - AdaptiveCards - MIT license (git://git@github.com/microsoft/AdaptiveCards.git)
+
+leac v0.6.0 - KillyMXI - MIT license (git+https://github.com/mxxii/leac.git)
+
+peberminta v0.9.0 - KillyMXI - MIT license (git+https://github.com/mxxii/peberminta.git)
+
+@1js/acui-slider v8.1.270 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-gallery-ink-thickness v6.1.701 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-focus v6.1.270 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-overflow-paddle-control v7.1.355 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-stack v3.1.232 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-shy-component v6.1.494 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-avatar v6.1.149 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/modern-font-picker v1.2.366 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+papaparse v5.3.0 - Matthew Holt - MIT license (https://github.com/mholt/PapaParse.git)
+
+roosterjs-content-model-plugins v9.51.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+@fluentui-copilot/react-announce v0.5.12 - MIT license (https://github.com/microsoft/fluentai)
+
+space-separated-tokens v2.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-whitespace v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+comma-separated-tokens v2.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+style-to-object v0.4.4 - Mark <mark@remarkablemark.org> - MIT license (https://github.com/remarkablemark/style-to-object)
+
+property-information v6.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-to-hast v12.3.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-gfm-footnote v1.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-gfm-task-list-item v1.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-gfm-strikethrough v1.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-gfm-autolink-literal v1.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-gfm-table v1.0.7 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-chunked v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@lexical/dragon v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/history v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/html v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/link v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/mark v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@lexical/table v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+unist-util-visit-parents v5.1.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-to-text v3.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-raw v7.2.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-sanitize v4.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-math v2.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-extension-math v2.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-phrasing v3.0.1 - Victor Felder <victor@draft.li> (https://draft.li) - MIT license
+
+hast-util-from-html-isomorphic v1.0.0 - Remco Haszing <remcohaszing@gmail.com> - MIT license
+
+@lexical/clipboard v0.12.6 - MIT license (https://github.com/facebook/lexical)
+
+@fluidframework/synthesize v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@asha/js-api v0.2.12 - ashafc - ISC license (https://office.visualstudio.com/OC/_git/office-online-insights)
+
+fake-indexeddb v3.1.7 - Jeremy Scheff <jdscheff@gmail.com> (http://dumbmatter.com/) - Apache-2.0 license (git://github.com/dumbmatter/fakeIndexedDB.git)
+
+justified-layout v4.1.0 - ISC license (git@github.com:flickr/justified-layout.git)
+
+object-assign v4.1.1 - Sindre Sorhus - MIT license
+
+uc.micro v1.0.5 - MIT license
+
+roosterjs-editor-adapter v8.66.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+@fluentui/react-icons-compat v0.1.4 - MIT license (https://github.com/microsoft/fluentui)
+
+roosterjs-content-model-markdown v9.51.0 - MIT license (https://github.com/Microsoft/roosterjs)
+
+@iabtechlabtcf/cmpapi v1.5.15 - Mayank Mishra <mayank@iabtechlab.com> - Apache-2.0 license (https://github.com/InteractiveAdvertisingBureau/iabtcf-es.git)
+
+@1js/acui-hooks v4.0.406 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/office-online-interactivity v9.13.33 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-pivot v10.1.271 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/acui-persona v7.1.149 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/ooui-trusted-types v3.16.34 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+async-es v3.2.3 - Caolan McMahon - MIT license (https://github.com/caolan/async.git)
+
+fast-text-encoding v1.0.6 - Sam Thorogood <sam.thorogood@gmail.com> - Apache-2.0 license
+
+lodash v4.18.1 - John-David Dalton <john.david.dalton@gmail.com> - MIT license
+
+mdast-util-from-markdown v1.3.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+is-buffer v1.1.6 - Feross Aboukhadijeh - MIT license (git://github.com/feross/is-buffer.git)
+
+vfile-message v3.1.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+bail v2.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+is-plain-obj v4.1.0 - Sindre Sorhus - MIT license
+
+trough v2.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+extend v3.0.2 - Stefan Thomas <justmoon@members.fsf.org> (http://www.justmoon.net) - MIT license (https://github.com/justmoon/node-extend.git)
+
+micromark-util-classify-character v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-resolve-all v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-core-commonmark v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-factory-space v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-normalize-identifier v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-sanitize-uri v1.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluentui-copilot/react-utilities v0.0.12 - MIT license (https://github.com/microsoft/fluentai)
+
+micromark-util-symbol v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-to-html v8.0.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+lowlight v2.9.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+remark-stringify v10.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluidframework/runtime-definitions v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+hast-util-from-dom v4.2.0 - Keith McKnight <keith@mcknig.ht> (https://keith.mcknig.ht) - ISC license
+
+events_pkg v3.3.0 - Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com) - MIT license (git://github.com/Gozala/events.git)
+
+semver-ts v1.0.3 - Tom Chen <tomchen.org@gmail.com> - ISC license (https://github.com/tomchen/semver-ts.git)
+
+@fluidx/activity-transport v6.12.55 - MIT license (https://office.visualstudio.com/DefaultCollection/OC/_git/office-bohemia)
+
+ent v2.2.2 - James Halliday <mail@substack.net> (http://substack.net) - MIT license
+
+@microsoft/oteljs-web v4.25.11 - SDX Telemetry <SDXTelemetry@service.microsoft.com> - MIT license (https://office.visualstudio.com/DefaultCollection/OE/Telemetry%20Metrics%20and%20Consumption/_git/OTEL-OTelJS)
+
+query-string v6.14.1 - Sindre Sorhus - MIT license
+
+@fluentui/scheme-utilities v8.3.64 - MIT license (https://github.com/microsoft/fluentui)
+
+message-extension-card-renderer v1.0.2025110601 - ISC license (https://office.visualstudio.com/DefaultCollection/Outlook%20Mobile/_git/outlook-adaptive-cards)
+
+linkifyjs v4.3.2 - Nick Frasser (https://nfrasser.com) - MIT license (git+https://github.com/nfrasser/linkifyjs.git)
+
+@fluentui/react-timepicker-compat v0.4.1 - MIT license (https://github.com/microsoft/fluentui)
+
+zustand v4.5.6 - Paul Henschel - MIT license (git+https://github.com/pmndrs/zustand.git)
+
+@1js/office-online-shared-watermarks v10.0.467 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+redux-actions v2.6.5 - Andrew Clark <acdlite@me.com> - MIT license (https://github.com/redux-utilities/redux-actions.git)
+
+error-stack-parser v2.1.4 - MIT license (git://github.com/stacktracejs/error-stack-parser.git)
+
+inline-style-parser v0.1.1 - MIT license (https://github.com/remarkablemark/inline-style-parser)
+
+mdast-util-to-markdown v1.5.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unist-util-generated v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-definitions v5.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unist-util-position v4.0.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-character v1.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+ccount v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-find-and-replace v2.2.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+markdown-table v3.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-encode v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluentui-copilot/pulsing-dot v0.1.2 - MIT license (https://github.com/microsoft/fluentai)
+
+unist-util-is v5.2.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+parse5 v7.3.0 - Ivan Nikulin <ifaaan@gmail.com> (https://github.com/inikulin) - MIT license (git://github.com/inikulin/parse5.git)
+
+longest-streak v3.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-is-element v2.1.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unist-util-find-after v4.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+sha.js v2.4.12 - Dominic Tarr <dominic.tarr@gmail.com> (dominictarr.com) - (MIT AND BSD-3-Clause) license (git://github.com/crypto-browserify/sha.js.git)
+
+hast-util-from-parse5 v7.1.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+html-void-elements v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+hast-util-to-parse5 v7.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+web-namespaces v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+zwitch v2.0.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluidframework/map v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/container-runtime v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/request-handler v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@fluidframework/tree v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+ua-parser-js v1.0.37 - Faisal Salman <f@faisalman.com> (http://faisalman.com) - MIT license (https://github.com/faisalman/ua-parser-js.git)
+
+strict-uri-encode v2.0.0 - Kevin Mårtensson - MIT license
+
+decode-uri-component v0.2.2 - Sam Verschueren - MIT license
+
+split-on-first v1.1.0 - Sindre Sorhus - MIT license
+
+filter-obj v1.1.0 - Sindre Sorhus - MIT license
+
+@ms/forms-loop v1.12.5 - Microsoft - MIT license
+
+react-virtualized-auto-sizer v1.0.24 - Brian Vaughn <brian.david.vaughn@gmail.com> (https://github.com/bvaughn/) - MIT license (https://github.com/bvaughn/react-virtualized-auto-sizer.git)
+
+@fluentui-contrib/react-data-grid-react-window v1.3.2 - MIT license (https://github.com/microsoft/fluentui-contrib)
+
+@1js/acui-tablist v8.2.147 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@1js/office-online-interactivity-interop v2.5.33 - MIT license (https://dev.azure.com/office/Office/_git/1JS)
+
+@fluentui-contrib/react-keytips v0.3.2 - MIT license (https://github.com/microsoft/fluentui-contrib)
+
+@fluentui-contrib/react-draggable-dialog v0.2.4 - MIT license (https://github.com/microsoft/fluentui-contrib)
+
+stackframe v1.3.4 - MIT license (git://github.com/stacktracejs/stackframe.git)
+
+micromark v3.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+trim-lines v3.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-decode-numeric-character-reference v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+mdast-util-to-string v3.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+decode-named-character-reference v1.0.2 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unist-util-stringify-position v3.0.3 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-decode-string v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+plurals-cldr v1.0.4 - Vitaly Puzrin (https://github.com/puzrin) - MIT license
+
+micromark-util-subtokenize v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-factory-title v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-factory-destination v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-factory-label v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-util-html-tag-name v1.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+micromark-factory-whitespace v1.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluentai/react-copilot v0.7.5 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/react-preview v0.2.0 - MIT license (https://github.com/microsoft/fluentai)
+
+lz4js v0.2.0 - John Chadwick - ISC license (git+ssh://git@github.com/Benzinga/lz4js.git)
+
+hastscript v7.2.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+socket.io-client v4.8.3 - MIT license (git+https://github.com/socketio/socket.io.git)
+
+setimmediate v1.0.5 - YuzuJS - MIT license
+
+d3-selection v3.0.0 - Mike Bostock - ISC license (https://github.com/d3/d3-selection.git)
+
+styled-components v6.1.19 - Glen Maddern - MIT license (git+https://github.com/styled-components/styled-components.git)
+
+safe-regex-test v1.1.0 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/ljharb/safe-regex-test.git)
+
+@iabtechlabtcf/stub v1.5.15 - Mayank Mishra <mayank@iabtechlab.com> - Apache-2.0 license (https://github.com/InteractiveAdvertisingBureau/iabtcf-es.git)
+
+camelcase v6.3.0 - Sindre Sorhus - MIT license
+
+@powerautomate/sdk v2.3.13 - Microsoft - ISC license (https://msazure.visualstudio.com/One/_git/Flow-JsSdk)
+
+just-curry-it v3.1.0 - Angus Croll - MIT license
+
+reduce-reducers v0.4.3 - Andrew Clark <acdlite@me.com> - MIT license
+
+format-fuse.js v1.0.3 - Eric Liu (https://github.com/metonym) - MIT license (https://github.com/metonym/format-fuse.js.git)
+
+react-infinite-scroll-component v5.1.0 - Ankeet Maini <ankeet.maini@gmail.com> - MIT license (git+https://github.com/ankeetmaini/react-infinite-scroll-component.git)
+
+escape-string-regexp v1.0.5 - Sindre Sorhus - MIT license
+
+fault v2.0.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+@fluentai/feedback-buttons v0.4.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/attachments v0.4.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/first-run-experience v0.1.4 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/output-card v0.4.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/provider v0.5.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/react-copilot-chat v0.2.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/latency v0.3.2 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/prompt-starter v0.2.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/textarea v0.3.3 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/suggestions v0.4.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/reference v0.4.2 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/tokens v0.1.6 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/react-flair v0.2.3 - MIT license (https://github.com/microsoft/fluentai)
+
+vfile-location v4.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+safe-buffer v5.2.1 - Feross Aboukhadijeh - MIT license (git://github.com/feross/safe-buffer.git)
+
+@fluidframework/id-compressor v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+d3-time-format v4.1.0 - Mike Bostock - ISC license (https://github.com/d3/d3-time-format.git)
+
+react-vtree v2.0.4 - Vlad Rindevich <rindevich.vs@gmail.com> (https://github.com/Lodin) - MIT license (git+https://github.com/Lodin/react-vtree.git)
+
+@fluidframework/shared-object-base v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+socket.io-parser v4.2.6 - MIT license (git+https://github.com/socketio/socket.io.git)
+
+engine.io-client v6.6.4 - MIT license (git+https://github.com/socketio/socket.io.git)
+
+d3-axis v3.0.0 - Mike Bostock - ISC license (https://github.com/d3/d3-axis.git)
+
+d3-array v3.2.4 - Mike Bostock - ISC license (https://github.com/d3/d3-array.git)
+
+d3-scale v4.0.2 - Mike Bostock - ISC license (https://github.com/d3/d3-scale.git)
+
+d3-format v3.1.0 - Mike Bostock - ISC license (https://github.com/d3/d3-format.git)
+
+d3-time v3.1.0 - Mike Bostock - ISC license (https://github.com/d3/d3-time.git)
+
+d3-shape v1.3.7 - Mike Bostock - BSD-3-Clause license (https://github.com/d3/d3-shape.git)
+
+d3-hierarchy v3.1.2 - Mike Bostock - ISC license (https://github.com/d3/d3-hierarchy.git)
+
+d3-sankey v0.12.3 - Mike Bostock - BSD-3-Clause license (https://github.com/d3/d3-sankey.git)
+
+is-regex v1.2.1 - Jordan Harband <ljharb@gmail.com> - MIT license (git://github.com/inspect-js/is-regex.git)
+
+shallowequal v1.1.0 - Alberto Leal - MIT license
+
+@emotion/is-prop-valid v1.2.2 - MIT license
+
+@emotion/unitless v0.8.1 - MIT license
+
+swiper v11.2.4 - Vladimir Kharlampidi - MIT license (https://github.com/nolimits4web/Swiper.git)
+
+showdown v2.1.0 - Estevão Santos - MIT license (https://github.com/showdownjs/showdown.git)
+
+to-camel-case v1.0.0 - MIT license
+
+set-value v2.0.1 - Jon Schlinkert (https://github.com/jonschlinkert) - MIT license
+
+strind v0.3.1 - Eric Liu (https://github.com/metonym) - MIT license (https://github.com/metonym/strind.git)
+
+react-router-dom v6.26.1 - Remix Software <hello@remix.run> - MIT license (https://github.com/remix-run/react-router)
+
+maplibre-gl v5.15.0 - BSD-3-Clause license (https://github.com/maplibre/maplibre-gl-js)
+
+stringify-entities v4.0.4 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+format v0.2.2 - Sami Samhuri <sami@samhuri.net> - MIT license (git://github.com/samsonjs/format.git)
+
+to-buffer v1.2.1 - Mathias Buus (@mafintosh) - MIT license (https://github.com/browserify/to-buffer.git)
+
+@socket.io/component-emitter v3.1.0 - MIT license (https://github.com/socketio/emitter.git)
+
+path-browserify v1.0.1 - James Halliday - MIT license (git://github.com/browserify/path-browserify.git)
+
+internmap v2.0.3 - Mike Bostock - ISC license (https://github.com/mbostock/internmap.git)
+
+@emotion/memoize v0.8.1 - MIT license
+
+react-resizable-panels v2.1.9 - Brian Vaughn <brian.david.vaughn@gmail.com> - MIT license (git+https://github.com/bvaughn/react-resizable-panels.git)
+
+react-use-promise v0.5.0 - Benjamim Sonntag <benjamimsonntag@gmail.com> - MIT license
+
+@microsoft-loop/es-membrane v0.0.14 - Andrew Stegmaier - ISC license (git+https://github.com/astegmaier/es-membrane-modules.git)
+
+@1js/privacy-guard-sdk v3.2.82 - ISC license (https://dev.azure.com/office/Office/_git/1JS)
+
+to-space-case v1.0.0 - MIT license
+
+is-primitive v3.0.1 - Jon Schlinkert (https://github.com/jonschlinkert) - MIT license
+
+is-plain-object v2.0.4 - Jon Schlinkert (https://github.com/jonschlinkert) - MIT license
+
+react-router v6.30.2 - Remix Software <hello@remix.run> - MIT license (https://github.com/remix-run/react-router)
+
+@remix-run/router v1.23.2 - Remix Software <hello@remix.run> - MIT license (https://github.com/remix-run/react-router)
+
+realistic-structured-clone v2.0.2 - Jeremy Scheff <jdscheff@gmail.com> (http://dumbmatter.com/) - Apache-2.0 license (git://github.com/dumbmatter/realistic-structured-clone.git)
+
+isarray v2.0.5 - Julian Gruber - MIT license (git://github.com/juliangruber/isarray.git)
+
+typed-array-buffer v1.0.3 - Jordan Harband <ljharb@gmail.com> - MIT license (git+https://github.com/inspect-js/typed-array-buffer.git)
+
+@fluentai/react-announce v0.2.1 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluentai/flair v0.2.7 - MIT license (https://github.com/microsoft/fluentai)
+
+@fluidframework/type-factory v2.93.0 - Microsoft and contributors - MIT license (https://github.com/microsoft/FluidFramework.git)
+
+@tylerbu/sorted-btree-es6 v2.1.1 - David Piepgrass - MIT license (git+https://github.com/tylerbutler/tools-monorepo.git)
+
+d3-interpolate v3.0.1 - Mike Bostock - ISC license (https://github.com/d3/d3-interpolate.git)
+
+@sinclair/typebox v0.34.35 - sinclairzx81 - MIT license (https://github.com/sinclairzx81/typebox)
+
+engine.io-parser v5.2.3 - MIT license (https://github.com/socketio/socket.io.git)
+
+js-cookie v2.2.1 - Klaus Hartl - MIT license (git://github.com/js-cookie/js-cookie.git)
+
+@ms/utilities-cross-window v1.9.1 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+lodash.debounce v4.0.8 - John-David Dalton <john.david.dalton@gmail.com> (http://allyoucanleet.com/) - MIT license
+
+lodash.throttle v4.1.1 - John-David Dalton <john.david.dalton@gmail.com> (http://allyoucanleet.com/) - MIT license
+
+@qas/smartcompose-tslibrary v2.1.17 - Zhem - ISC license
+
+to-no-case v1.0.2 - MIT license
+
+isobject v3.0.1 - Jon Schlinkert (https://github.com/jonschlinkert) - MIT license
+
+hast-util-parse-selector v3.1.1 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+unorm v1.6.0 - Bjarke Walling <bwp@bwp.dk> - MIT or GPL-2.0 license (http://github.com/walling/unorm.git)
+
+d3-path v1.0.9 - Mike Bostock - BSD-3-Clause license (https://github.com/d3/d3-path.git)
+
+d3-color v3.1.0 - Mike Bostock - ISC license (https://github.com/d3/d3-color.git)
+
+intl-messageformat v9.11.4 - Eric Ferraiuolo <eferraiuolo@gmail.com> - BSD-3-Clause license (git@github.com:formatjs/formatjs.git)
+
+@formatjs/icu-messageformat-parser v2.0.18 - MIT license (https://github.com/formatjs/formatjs.git)
+
+@formatjs/fast-memoize v1.2.1 - Long Ho <holevietlong@gmail.com> - MIT license (git+ssh://git@github.com/formatjs/formatjs.git)
+
+@ms/utilities-disposables v1.1.1 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+character-entities-legacy v3.0.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+character-entities-html4 v2.1.0 - Titus Wormer <tituswormer@gmail.com> (https://wooorm.com) - MIT license
+
+react-rnd v10.4.13 - bokuweb - MIT license (https://github.com/bokuweb/react-rnd.git)
+
+@tanstack/react-query v4.36.1 - tannerlinsley - MIT license (https://github.com/TanStack/query.git)
+
+@formatjs/icu-skeleton-parser v1.3.5 - MIT license (https://github.com/formatjs/formatjs.git)
+
+@microsoft/1ds-getcollectorurlsnippet-js v4.3.5 - Javascript Telemetry SDKs <TelReachSDK@microsoft.com> - ISC license
+
+re-resizable v6.10.0 - bokuweb - MIT license (https://github.com/bokuweb/react-resizable-box.git)
+
+react-draggable v4.4.6 - Matt Zabriskie - MIT license (https://github.com/react-grid-layout/react-draggable.git)
+
+@lottiefiles/dotlottie-web v0.37.0 - LottieFiles - MIT license (git+https://github.com/LottieFiles/dotlottie-web.git)
+
+@tanstack/query-core v4.36.1 - tannerlinsley - MIT license (https://github.com/TanStack/query.git)
+
+react-window-infinite-loader v1.0.10 - Brian Vaughn <brian.david.vaughn@gmail.com> (https://github.com/bvaughn/) - MIT license (https://github.com/bvaughn/react-window-infinite-loader.git)
+
+@msinternal/utilities-guid v1.3.4 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+clsx v2.1.1 - Luke Edwards - MIT license
+
+@msinternal/utilities-cross-window v1.9.1 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+blueimp-md5 v2.19.0 - Sebastian Tschan - MIT license (git://github.com/blueimp/JavaScript-MD5.git)
+
+@msinternal/utilities-disposables v1.1.1 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+@microsoft/1ds-cv-js v4.3.6 - Javascript Telemetry SDKs <TelReachSDK@microsoft.com> - ISC license (https://msazure.visualstudio.com/One/Mobile%20Analytics%20-%20Mobile%20SDKs/_git/1DS.Javascript.CorrelationVector)
+
+@msinternal/sp-resource-path v1.2.9 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+@msinternal/utilities-encoding v1.3.4 - MIT license (https://dev.azure.com/onedrive/ODSP-Web/_git/odsp-web)
+
+url-parse v1.5.10 - Arnout Kazemier - MIT license (https://github.com/unshiftio/url-parse.git)
+
+querystringify v2.2.0 - Arnout Kazemier - MIT license (https://github.com/unshiftio/querystringify)
+
+requires-port v1.0.0 - Arnout Kazemier - MIT license (https://github.com/unshiftio/requires-port)
+
+@ms/office-media-types-common v6.4.5 - ISC license
+
+synctasks v0.3.3 - David de Regt <David.de.Regt@microsoft.com> - MIT license (https://github.com/Microsoft/SyncTasks)
+
+subscribableevent v1.0.1 - ReactXP Team <reactxp@microsoft.com> - MIT license (git+https://github.com/Microsoft/SubscribableEvent.git)
+
+simplerestclients v0.2.12 - David de Regt <David.de.Regt@microsoft.com> - MIT license (https://github.com/Microsoft/SimpleRestClients)
