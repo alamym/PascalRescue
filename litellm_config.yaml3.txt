@@ -1,0 +1,56 @@
+litellm_settings:
+  drop_params: true
+  modify_params: true
+
+model_list:
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gpt-5
+      api_base: "https://models.inference.ai.azure.com"
+      api_key: 
+      custom_llm_provider: openai
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyBzjJFhpJyt_DNBqMIBt4y5-o-UPjR4PaM"
+      rpm: 30"
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyD812jgiizcdNzaRHkHgoT7uOh__rQl-WQ"
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyCZsBOB8mAtu7NLV1i6vZylt-krs8MvpC4"
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: "AIzaSyAzje4VbIzQIahJ_BpxtWbJUUHWLKzXDYo"
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyAS5KerXPjTlmk6Rcsf5IDy68np00-NipQ"
+      rpm: 15
+
+  - model_name: google-backup-group
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyDWzSsnVe2e_EY3tG_W6lYK4iIR3lks8ac"
+      rpm: 15
+
+router_settings:
+  routing_strategy: "simple-shuffle"
+  num_retries: 5
+  fallbacks: [
+    {"gemini-3-flash-preview": ["google-backup-group"]}
+  ]

@@ -1,0 +1,59 @@
+litellm_settings:
+  drop_params: true
+  modify_params: true
+
+model_list:
+  # =========================================================================
+  # LAYER 2: SECOND LINE - GOOGLE EMERGENCY BACKUP
+  # =========================================================================
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyBzjJFhpJyt_DNBqMIBt4y5-o-UPjR4PaM"
+      rpm: 15
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyD812jgiizcdNzaRHkHgoT7uOh__rQl-WQ"
+      rpm: 15
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyCZsBOB8mAtu7NLV1i6vZylt-krs8MvpC4"
+      rpm: 15
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: "AIzaSyAzje4VbIzQIahJ_BpxtWbJUUHWLKzXDYo"
+      rpm: 15
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyAS5KerXPjTlmk6Rcsf5IDy68np00-NipQ"
+      rpm: 15
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "AIzaSyDWzSsnVe2e_EY3tG_W6lYK4iIR3lks8ac"
+      rpm: 15
+
+
+  # =========================================================================
+  # LAYER 1: MAIN LINE - GITHUB MODELS (Locked to 4000 to prevent 413 error)
+  # =========================================================================
+  - model_name: claude-haiku-4-5-20251001
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: "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"
+      custom_llm_provider: openai
+      rpm: 15
+      max_tokens: 4000
+
+router_settings:
+  routing_strategy: "simple-shuffle"
+  num_retries: 5

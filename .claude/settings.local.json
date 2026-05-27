@@ -15,7 +15,12 @@
       "Bash(git commit *)",
       "Bash(git config *)",
       "Bash(gh api *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(mkdir PascalRescue)",
+      "Bash(mkdir PascalRescue/src)",
+      "Bash(mkdir PascalRescue/src/engine)",
+      "Bash(mkdir PascalRescue/src/modules)",
+      "Bash(mkdir PascalRescue/src/data)"
     ]
   },
   "hooks": {

@@ -5,7 +5,6 @@
   set_verbose: false
 
 model_list:
-  # ---- 1. Google Gemini Cluster (6 Keys) ----
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
@@ -37,51 +36,62 @@ model_list:
       api_key: "AIzaSyDWzSsnVe2e_EY3tG_W6lYK4iIR3lks8ac"
       rpm: 15
 
-  # ---- 2. OpenRouter Cluster (3 Keys) ----
-  - model_name: szeman-main-pool
+  - model_name: szeman-backup-pool
     litellm_params:
-      model: openrouter/google/gemini-2.0-flash-lite-preview-02-05
+      model: openrouter/google/gemini-2.5-flash
       api_key: "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"
       rpm: 10
-  - model_name: szeman-main-pool
+  - model_name: szeman-backup-pool
     litellm_params:
-      model: openrouter/google/gemini-2.0-flash-lite-preview-02-05
+      model: openrouter/google/gemini-2.5-flash
       api_key: "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"
       rpm: 10
-  - model_name: szeman-main-pool
+  - model_name: szeman-backup-pool
     litellm_params:
-      model: openrouter/google/gemini-2.0-flash-lite-preview-02-05
+      model: openrouter/google/gemini-2.5-flash
       api_key: "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"
       rpm: 10
-
-  # ---- 3. GitHub Models (2 Keys) ----
-  - model_name: szeman-main-pool
+  - model_name: szeman-backup-pool
     litellm_params:
-      model: openai/gpt-4o-mini
-      api_base: "https://models.inference.ai.azure.com"
+      model: openrouter/google/gemini-2.5-flash
+      api_key: "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"
+      rpm: 10
+  - model_name: szeman-backup-pool
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
       api_key: "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"
-      rpm: 10
-  - model_name: szeman-main-pool
+      rpm: 5
+  - model_name: szeman-backup-pool
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: "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"
+      rpm: 5
+  - model_name: szeman-backup-pool
+    litellm_params:
+      model: huggingface/meta-llama/Meta-Llama-3-8B-Instruct
+      api_key: "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"
+      rpm: 15
+  - model_name: szeman-backup-pool
+    litellm_params:
+      model: huggingface/meta-llama/Meta-Llama-3-8B-Instruct
+      api_key: "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"
+      rpm: 15
+  - model_name: szeman-github-text
     litellm_params:
       model: openai/gpt-4o-mini
       api_base: "https://models.inference.ai.azure.com"
-      api_key: "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"
-      rpm: 10
-
-  # ---- 4. Groq (2 Keys) ----
-  - model_name: szeman-main-pool
-    litellm_params:
-      model: groq/llama-3.3-70b-versatile
       api_key: "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"
-      rpm: 5
-  - model_name: szeman-main-pool
+      rpm: 10
+  - model_name: szeman-github-text
     litellm_params:
-      model: groq/llama-3.3-70b-versatile
+      model: openai/gpt-4o-mini
+      api_base: "https://models.inference.ai.azure.com"
       api_key: "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"
-      rpm: 5
+      rpm: 10
 
 router_settings:
   routing_strategy: "simple-shuffle"
   num_retries: 5
   retry_after: 5
   timeout: 60
+  fallbacks: [{"szeman-main-pool": ["szeman-backup-pool"]}]
