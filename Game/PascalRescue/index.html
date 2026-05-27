@@ -35,7 +35,7 @@
                 <div class="floor-label">MSA CAMPUS: PASCAL BUILDING</div>
 
                 <!-- Final Challenge (HQ) -->
-                <div class="floor-row locked" id="boss-floor">
+                <div class="floor-row locked" id="floor-hq">
                     <span class="floor-num">HQ</span>
                     <div class="rooms-container">
                         <button class="boss-btn locked" data-room-id="0" disabled>THE FINAL CHALLENGE</button>
@@ -46,8 +46,8 @@
                 <div class="floor-row locked" id="floor-5">
                     <span class="floor-num">5F</span>
                     <div class="rooms-container">
-                        <button class="room-btn locked" data-room-id="501" disabled>Endeavour Hall</button>
-                        <button class="room-btn boss-btn locked" data-room-id="500" disabled>Endeavour Boss</button>
+                        <button class="room-btn locked" data-room-id="501" disabled>Endeavour Room</button>
+                        <button class="boss-btn locked" data-room-id="500" disabled>ENDEAVOUR BOSS</button>
                     </div>
                 </div>
 
@@ -55,8 +55,8 @@
                 <div class="floor-row locked" id="floor-4">
                     <span class="floor-num">4F</span>
                     <div class="rooms-container">
-                        <button class="room-btn locked" data-room-id="401" disabled>Courage Hall</button>
-                        <button class="room-btn boss-btn locked" data-room-id="400" disabled>Courage Boss</button>
+                        <button class="room-btn locked" data-room-id="401" disabled>Courage Room</button>
+                        <button class="boss-btn locked" data-room-id="400" disabled>COURAGE BOSS</button>
                     </div>
                 </div>
 
@@ -64,8 +64,8 @@
                 <div class="floor-row locked" id="floor-3">
                     <span class="floor-num">3F</span>
                     <div class="rooms-container">
-                        <button class="room-btn locked" data-room-id="301" disabled>Compassion Hall</button>
-                        <button class="room-btn boss-btn locked" data-room-id="300" disabled>Compassion Boss</button>
+                        <button class="room-btn locked" data-room-id="301" disabled>Compassion Room</button>
+                        <button class="boss-btn locked" data-room-id="300" disabled>COMPASSION BOSS</button>
                     </div>
                 </div>
 
@@ -73,8 +73,8 @@
                 <div class="floor-row locked" id="floor-2">
                     <span class="floor-num">2F</span>
                     <div class="rooms-container">
-                        <button class="room-btn locked" data-room-id="201" disabled>Kindness Hall</button>
-                        <button class="room-btn boss-btn locked" data-room-id="200" disabled>Kindness Boss</button>
+                        <button class="room-btn locked" data-room-id="201" disabled>Kindness Room</button>
+                        <button class="boss-btn locked" data-room-id="200" disabled>KINDNESS BOSS</button>
                     </div>
                 </div>
 
@@ -82,36 +82,33 @@
                 <div class="floor-row active" id="floor-1">
                     <span class="floor-num">1F</span>
                     <div class="rooms-container">
-                        <button class="room-btn" data-room-id="101">Dignity Hall</button>
-                        <button class="room-btn boss-btn locked" data-room-id="100" disabled>Dignity Boss</button>
+                        <button class="room-btn" data-room-id="101">Dignity Room</button>
+                        <button class="boss-btn locked" data-room-id="100" disabled>DIGNITY BOSS</button>
                     </div>
                 </div>
             </div>
             <div class="school-motto">"Manners maketh man."</div>
         </main>
 
-        <!-- Battle/Question Screen -->
+        <!-- Battle Screen -->
         <section id="battle-screen" class="hidden">
             <div class="battle-header">
-                <div id="room-info">Dignity Room - <span id="battle-phase">Stage 1</span></div>
+                <div id="room-info">Room - <span id="battle-phase">Stage 1</span></div>
                 <div class="hp-bar-container">
                     <div id="enemy-hp" class="hp-bar"></div>
                 </div>
             </div>
-
             <div class="visual-area">
                 <div id="player-sprite">🛡️ Warrior</div>
                 <div id="enemy-container">
                     <div id="enemy-sprite">👾</div>
                     <div id="enemy-name">Math Imp</div>
                 </div>
-                <!-- Effect Layer -->
                 <div id="effect-layer"></div>
             </div>
-
             <div class="interaction-area">
                 <div id="question-box">
-                    <p id="question-text">Loading challenge...</p>
+                    <p id="question-text">Loading...</p>
                     <div class="input-group">
                         <input type="number" id="answer-input" placeholder="?" autofocus step="any">
                         <button id="attack-btn">SOLVE</button>
@@ -125,10 +122,10 @@
         <section id="victory-screen" class="hidden">
             <div class="celebration-box">
                 <div class="confetti"></div>
-                <h1 id="victory-title">VALUE EARNED! 🏆</h1>
-                <p id="victory-text">You have demonstrated the core value!</p>
+                <h1 id="victory-title">VICTORY! 🏆</h1>
+                <p id="victory-text">You have earned a value badge!</p>
                 <div id="victory-badge" class="reward-badge">✨</div>
-                <button class="continue-btn" onclick="showMap()">Return to Campus</button>
+                <button class="continue-btn" onclick="showMap()">Return to Map</button>
             </div>
         </section>
     </div>

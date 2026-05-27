@@ -70,11 +70,15 @@ model_list:
     litellm_params:
       model: huggingface/meta-llama/Meta-Llama-3-8B-Instruct
       api_key: "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"
+      max_tokens: 8192
       rpm: 15
+      drop_params: True
   - model_name: szeman-backup-pool
     litellm_params:
       model: huggingface/meta-llama/Meta-Llama-3-8B-Instruct
       api_key: "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"
+      max_tokens: 8192
+      drop_params: True
       rpm: 15
   - model_name: szeman-github-text
     litellm_params:
