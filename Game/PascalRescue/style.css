@@ -169,6 +169,13 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
 /* Battle Screen Styles */
 .hidden { display: none !important; }
 
+#map-screen {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 #battle-screen {
     flex-grow: 1;
     display: flex;
