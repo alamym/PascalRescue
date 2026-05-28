@@ -5,8 +5,7 @@ let gameState = {
     phase: 'minion', // 'minion' or 'teacher_rescue' or 'boss'
     enemyHP: 100,
     progress: JSON.parse(localStorage.getItem('msaQuestProgress')) || {
-        100: false, 200: false, 300: false, 400: false, 500: false, 0: false,
-        101: false, 102: false, 103: false, 201: false, 202: false, 301: false, 302: false, 303: false, 401: false, 402: false
+        100: false, 200: false, 300: false, 400: false, 500: false, 0: false
     },
     roomMinionProgress: {}
 };
@@ -16,28 +15,25 @@ const roomData = {
     // FLOOR 1: NUMBER
     101: {
         name: "101: Multiples & Powers",
-        topic: "Number",
         minions: [
             { q: "12 x 100 = ?", a: 1200, hint: "Add two zeros.", enemy: "Factor Imp 😈" },
             { q: "450 ÷ 10 = ?", a: 45, hint: "Remove one zero.", enemy: "Factor Imp 😈" },
-            { q: "Is 15 a multiple of 3?", a: 1, hint: "Answer 1 for Yes, 0 for No.", enemy: "Factor Imp 😈" }
+            { q: "What is 2 to the power of 3 (2^3)?", a: 8, hint: "2 x 2 x 2", enemy: "Power Pixie ✨" }
         ],
-        teacherRescue: { q: "Find the LCM of 4 and 6.", a: 12, hint: "Multiples of 4: 4,8,12... Multiples of 6: 6,12...", enemy: "Teacher's Cage ⛓️" }
+        teacherRescue: { q: "Find the LCM of 6 and 8.", a: 24, hint: "Multiples of 6: 6,12,18,24. Multiples of 8: 8,16,24.", enemy: "Teacher's Cage ⛓️" }
     },
     102: {
         name: "102: Negative Dungeon",
-        topic: "Number",
         minions: [
-            { q: "-5 + 8 = ?", a: 3, hint: "Think of temperature.", enemy: "Minus Shadow 👻" },
+            { q: "-5 + 8 = ?", a: 3, hint: "Think of temperature rising.", enemy: "Minus Shadow 👻" },
             { q: "3 - 10 = ?", a: -7, hint: "Go below zero.", enemy: "Minus Shadow 👻" }
         ],
         teacherRescue: { q: "-4 x -3 = ?", a: 12, hint: "Negative x Negative = Positive.", enemy: "Teacher's Cage ⛓️" }
     },
     103: {
         name: "103: Fraction Vault",
-        topic: "Number",
         minions: [
-            { q: "0.5 as a fraction (numerator)? e.g. 1/2 answer 1", a: 1, hint: "1/2", enemy: "Percent Pixel 👾" },
+            { q: "0.5 as a fraction (numerator)? e.g. 1/2 answer 1", a: 1, hint: "It is one half.", enemy: "Decimal Drone 👾" },
             { q: "25% of 40?", a: 10, hint: "Divide by 4.", enemy: "Percent Pixel 👾" }
         ],
         teacherRescue: { q: "Find 3/4 of 24.", a: 18, hint: "Divide by 4, then multiply by 3.", enemy: "Teacher's Cage ⛓️" }
@@ -52,41 +48,111 @@ const roomData = {
     // FLOOR 2: ALGEBRA
     201: {
         name: "201: Expression Arcade",
-        minions: [{ q: "Simplify: 3a + 2a", a: 5, hint: "Add the coefficients (answer just the number 5)", enemy: "Bracket Goblin 👺" }],
-        teacherRescue: { q: "Expand: 3(x + 4) if x=2, what is the value?", a: 18, hint: "3 * (2 + 4)", enemy: "Teacher's Cage ⛓️" }
+        minions: [
+            { q: "Simplify: 3a + 2a", a: 5, hint: "Add the coefficients (answer only the number)", enemy: "Bracket Goblin 👺" },
+            { q: "Simplify: 10x - 4x", a: 6, hint: "Subtract the numbers.", enemy: "Bracket Goblin 👺" }
+        ],
+        teacherRescue: { q: "Expand: 3(x + 4). If x=2, what is the value?", a: 18, hint: "3 * (2 + 4)", enemy: "Teacher's Cage ⛓️" }
     },
     202: {
         name: "202: Equation Lab",
-        minions: [{ q: "x + 5 = 12, x = ?", a: 7, hint: "Subtract 5.", enemy: "Variable Viper 🐍" }],
+        minions: [
+            { q: "x + 5 = 12, x = ?", a: 7, hint: "Subtract 5.", enemy: "Variable Viper 🐍" },
+            { q: "x / 2 = 10, x = ?", a: 20, hint: "Multiply by 2.", enemy: "Variable Viper 🐍" }
+        ],
         teacherRescue: { q: "2x - 3 = 7, x = ?", a: 5, hint: "Add 3, then divide by 2.", enemy: "Teacher's Cage ⛓️" }
     },
     200: {
         name: "2F BOSS: X-Algebrator",
         type: 'boss',
         badge: "KINDNESS",
-        questions: { q: "If a=3, b=4, what is 2a + b?", a: 10, hint: "2*3 + 4", enemy: "X-Algebrator 🤖" }
+        questions: { q: "If a=3 and b=4, find 2a + b.", a: 10, hint: "2*3 + 4", enemy: "X-Algebrator 🤖" }
+    },
+
+    // FLOOR 3: RATIO & SHAPE
+    301: {
+        name: "301: Proportion Sector",
+        minions: [
+            { q: "Simplify ratio 5:10 (answer 1:x, x=?)", a: 2, hint: "Divide both by 5.", enemy: "Scaling Slime 💧" },
+            { q: "Share £20 in ratio 1:1. Each gets?", a: 10, hint: "Split equally.", enemy: "Scaling Slime 💧" }
+        ],
+        teacherRescue: { q: "Share £60 in ratio 2:3. Find the larger share.", a: 36, hint: "Total parts = 5. £60/5 = £12. 3 parts = ?", enemy: "Teacher's Cage ⛓️" }
+    },
+    302: {
+        name: "302: Geometry Zone",
+        minions: [
+            { q: "Angle on a straight line is ?", a: 180, hint: "A half turn.", enemy: "Angle Phantom 👻" },
+            { q: "Angles in a triangle add to ?", a: 180, hint: "Same as a straight line.", enemy: "Angle Phantom 👻" }
+        ],
+        teacherRescue: { q: "One angle is 40 on a straight line. Find the missing angle.", a: 140, hint: "180 - 40", enemy: "Teacher's Cage ⛓️" }
+    },
+    303: {
+        name: "303: Perimeter Perimeter",
+        minions: [
+            { q: "Perimeter of square with side 5cm?", a: 20, hint: "4 sides of 5cm.", enemy: "Area Anomaly 🟦" }
+        ],
+        teacherRescue: { q: "Area of triangle with base 10 and height 5?", a: 25, hint: "(Base x Height) / 2", enemy: "Teacher's Cage ⛓️" }
+    },
+    300: {
+        name: "3F BOSS: Geometric Sphinx",
+        type: 'boss',
+        badge: "COMPASSION",
+        questions: { q: "Find the area of a rectangle 8m by 7m.", a: 56, hint: "Length x Width", enemy: "Geometric Sphinx 🏺" }
+    },
+
+    // FLOOR 4: DATA & PROBABILITY
+    401: {
+        name: "401: Chance Chamber",
+        minions: [
+            { q: "Probability of 'Heads' on a coin (decimal)?", a: 0.5, hint: "1 out of 2.", enemy: "Dice Drone 🎲" }
+        ],
+        teacherRescue: { q: "Probability of rolling a 6 on a fair die (fraction 1/x, x=?)", a: 6, hint: "1 out of 6.", enemy: "Teacher's Cage ⛓️" }
+    },
+    402: {
+        name: "402: Chart Citadel",
+        minions: [
+            { q: "Mean of 2, 4, 6?", a: 4, hint: "Total / 3.", enemy: "Graph Gremlin 📊" }
+        ],
+        teacherRescue: { q: "Find the range of 10, 20, 50.", a: 40, hint: "Largest - Smallest.", enemy: "Teacher's Cage ⛓️" }
+    },
+    400: {
+        name: "4F BOSS: Stochastic Titan",
+        type: 'boss',
+        badge: "COURAGE",
+        questions: { q: "Find the median of 3, 5, 8, 10, 12.", a: 8, hint: "The middle number.", enemy: "Stochastic Titan 🌪️" }
+    },
+
+    // ROOFTOP: THE FINAL CHALLENGE
+    0: {
+        name: "ROOFTOP: The Maths Demon",
+        type: 'boss',
+        badge: "ENDEAVOUR",
+        questions: { q: "BIDMAS: (10 + 5) x 2 - 4 = ?", a: 26, hint: "Brackets first!", enemy: "The Maths Demon 👺" }
     }
 };
-
-// Add placeholder data for F3 and F4 to prevent crashes
-[301, 302, 303, 401, 402, 300, 400, 500, 0].forEach(id => {
-    if (!roomData[id]) roomData[id] = { name: "Coming Soon", minions: [{q:"1+1=?", a:2, enemy:"?"}], teacherRescue: {q:"2+2=?", a:4, enemy:"?"}, questions: {q:"3+3=?", a:6, enemy:"?"} };
-});
 
 let currentQuestionSet = [];
 let questionIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Load progress
     const savedProgress = localStorage.getItem('msaQuestProgress');
     if (savedProgress) gameState.progress = JSON.parse(savedProgress);
+
+    const savedRoomState = localStorage.getItem('msaRoomProgress');
+    if (savedRoomState) gameState.roomMinionProgress = JSON.parse(savedRoomState);
+
     updateStats();
     updateMapUI();
     updateBadges();
 
-    document.querySelectorAll('.room-btn, .boss-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = parseInt(btn.dataset.roomId);
-            if (!btn.disabled) initiateBattle(id);
+    // Event Bindings
+    document.querySelectorAll('.room-btn, .boss-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            if (!button.classList.contains('locked') && !button.disabled) {
+                const roomId = parseInt(button.getAttribute('data-room-id'));
+                if (!isNaN(roomId)) initiateBattle(roomId);
+            }
         });
     });
 
@@ -99,6 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initiateBattle(roomId) {
     gameState.currentRoom = roomId;
     const data = roomData[roomId];
+    if (!data) return;
+
     document.getElementById('map-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.remove('hidden');
     document.getElementById('room-info').innerText = data.name;
@@ -107,12 +175,15 @@ function initiateBattle(roomId) {
     if (data.type === 'boss') {
         gameState.phase = 'boss';
         currentQuestionSet = [data.questions];
+        questionIndex = 0;
     } else {
         gameState.phase = 'minion';
         currentQuestionSet = data.minions;
+        // ROBUSTNESS: Ensure index is within bounds
+        let savedIdx = gameState.roomMinionProgress[roomId] || 0;
+        questionIndex = (savedIdx >= currentQuestionSet.length) ? 0 : savedIdx;
     }
 
-    questionIndex = 0;
     gameState.enemyHP = 100;
     updateBattleUI();
     loadQuestion();
@@ -120,34 +191,39 @@ function initiateBattle(roomId) {
 
 function loadQuestion() {
     const roomId = gameState.currentRoom;
+    const data = roomData[roomId];
     let qData;
 
     if (gameState.phase === 'minion') {
         qData = currentQuestionSet[questionIndex];
     } else if (gameState.phase === 'teacher_rescue') {
-        qData = roomData[roomId].teacherRescue;
+        qData = data.teacherRescue;
     } else {
-        qData = roomData[roomId].questions;
+        qData = data.questions;
     }
 
-    if (!qData) { console.error("No question data found!"); return; }
+    const qTextEl = document.getElementById('question-text');
+    if (!qData) {
+        qTextEl.innerText = "Error: Question not found. Please return to map.";
+        return;
+    }
 
-    // CRITICAL: Ensure text is pushed to UI
-    document.getElementById('question-text').innerText = qData.q;
+    qTextEl.innerText = qData.q;
     document.getElementById('answer-input').value = '';
     document.getElementById('math-hint').classList.add('hidden');
-    document.getElementById('enemy-name').innerText = qData.enemy;
-    document.getElementById('enemy-sprite').innerText = qData.enemy.split(' ').pop();
+    document.getElementById('enemy-name').innerText = qData.enemy || "Math Minion";
+    document.getElementById('enemy-sprite').innerText = (qData.enemy || "").split(' ').pop() || "👾";
 }
 
 function processAnswer() {
     const input = document.getElementById('answer-input').value;
     const roomId = gameState.currentRoom;
+    const data = roomData[roomId];
     let qData;
 
     if (gameState.phase === 'minion') qData = currentQuestionSet[questionIndex];
-    else if (gameState.phase === 'teacher_rescue') qData = roomData[roomId].teacherRescue;
-    else qData = roomData[roomId].questions;
+    else if (gameState.phase === 'teacher_rescue') qData = data.teacherRescue;
+    else qData = data.questions;
 
     if (parseFloat(input) === qData.a) {
         handleCorrect();
@@ -161,10 +237,14 @@ function handleCorrect() {
 
     if (gameState.phase === 'minion') {
         questionIndex++;
+        // Save minion progress
+        gameState.roomMinionProgress[gameState.currentRoom] = questionIndex;
+        localStorage.setItem('msaRoomProgress', JSON.stringify(gameState.roomMinionProgress));
+
         if (questionIndex >= currentQuestionSet.length) {
             gameState.phase = 'teacher_rescue';
-            gameState.enemyHP = 100; // Reset for Teacher Rescue
-            createEffect("TEACHER RESCUE STAGE!", "warning");
+            gameState.enemyHP = 100;
+            createEffect("RESCUE THE TEACHER!", "warning");
             setTimeout(loadQuestion, 1000);
         } else {
             gameState.enemyHP -= (100 / currentQuestionSet.length);
@@ -192,12 +272,22 @@ function showVictory(roomId) {
     document.getElementById('battle-screen').classList.add('hidden');
     document.getElementById('victory-screen').classList.remove('hidden');
 
-    if (data.type === 'boss') {
-        document.getElementById('victory-title').innerText = "VALUE EARNED! 🏆";
-        document.getElementById('victory-text').innerText = `You mastered ${data.badge} and rescued a specialist teacher!`;
+    const titleEl = document.getElementById('victory-title');
+    const textEl = document.getElementById('victory-text');
+    const badgeEl = document.getElementById('victory-badge');
+
+    if (roomId === 0) {
+        titleEl.innerText = "MISSION COMPLETE! 🎓";
+        textEl.innerText = "You rescued the Head of Math and mastered all Year 7 topics!";
+        badgeEl.innerText = "🏆";
+    } else if (data.type === 'boss') {
+        titleEl.innerText = `${data.badge} BADGE EARNED! 🏆`;
+        textEl.innerText = `You demonstrated ${data.badge} and rescued a specialist teacher!`;
+        badgeEl.innerText = "✨";
     } else {
-        document.getElementById('victory-title').innerText = "ROOM CLEARED! 🏫";
-        document.getElementById('victory-text').innerText = "The classroom is safe. On to the next!";
+        titleEl.innerText = "ROOM CLEARED! 🏫";
+        textEl.innerText = "The teacher is safe and sound. Great work!";
+        badgeEl.innerText = "⭐";
     }
 }
 
@@ -211,13 +301,13 @@ function showMap() {
 }
 
 function updateStats() {
-    const bossIds = [100, 200, 300, 400, 500];
+    const bossIds = [100, 200, 300, 400, 0];
     gameState.rescuedTeachers = bossIds.filter(id => gameState.progress[id]).length;
     document.getElementById('teacher-count').innerText = gameState.rescuedTeachers;
 }
 
 function updateBadges() {
-    const badges = { 100: 'dignity', 200: 'kindness', 300: 'compassion', 400: 'courage', 500: 'endeavour' };
+    const badges = { 100: 'dignity', 200: 'kindness', 300: 'compassion', 400: 'courage', 0: 'endeavour' };
     for (let id in badges) {
         const el = document.getElementById(`badge-${badges[id]}`);
         if (gameState.progress[id] && el) el.classList.add('earned');
@@ -234,15 +324,26 @@ function updateMapUI() {
             btn.classList.add('completed');
             btn.disabled = true;
         } else {
-            // Unlock logic: 101 always open, others depend on previous
             let locked = false;
+            // Linear unlocking per floor
             if (id == 102 && !gameState.progress[101]) locked = true;
             if (id == 103 && !gameState.progress[102]) locked = true;
             if (id == 100 && !gameState.progress[103]) locked = true;
-            // Floor 2 unlocks after Floor 1 Boss
+
             if (id == 201 && !gameState.progress[100]) locked = true;
             if (id == 202 && !gameState.progress[201]) locked = true;
             if (id == 200 && !gameState.progress[202]) locked = true;
+
+            if (id == 301 && !gameState.progress[200]) locked = true;
+            if (id == 302 && !gameState.progress[301]) locked = true;
+            if (id == 303 && !gameState.progress[302]) locked = true;
+            if (id == 300 && !gameState.progress[303]) locked = true;
+
+            if (id == 401 && !gameState.progress[300]) locked = true;
+            if (id == 402 && !gameState.progress[401]) locked = true;
+            if (id == 400 && !gameState.progress[402]) locked = true;
+
+            if (id == 0 && !gameState.progress[400]) locked = true;
 
             if (locked) { btn.classList.add('locked'); btn.disabled = true; }
             else { btn.classList.remove('locked'); btn.disabled = false; }
