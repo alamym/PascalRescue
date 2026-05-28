@@ -36,26 +36,26 @@ model_list:
       api_key: "AIzaSyDWzSsnVe2e_EY3tG_W6lYK4iIR3lks8ac"
       rpm: 15
 
-  - model_name: szeman-backup-pool
-    litellm_params:
-      model: openrouter/google/gemini-2.5-flash
-      api_key: "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"
-      rpm: 10
-  - model_name: szeman-backup-pool
-    litellm_params:
-      model: openrouter/google/gemini-2.5-flash
-      api_key: "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"
-      rpm: 10
-  - model_name: szeman-backup-pool
-    litellm_params:
-      model: openrouter/google/gemini-2.5-flash
-      api_key: "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"
-      rpm: 10
-  - model_name: szeman-backup-pool
-    litellm_params:
-      model: openrouter/google/gemini-2.5-flash
-      api_key: "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"
-      rpm: 10
+  #- model_name: szeman-backup-pool
+    #litellm_params:
+      #model: openrouter/google/gemini-2.5-flash
+      #api_key: "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"
+      #rpm: 10
+  #- model_name: szeman-backup-pool
+    #litellm_params:
+      #model: openrouter/google/gemini-2.5-flash
+      #api_key: "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"
+      #rpm: 10
+  #- model_name: szeman-backup-pool
+    #litellm_params:
+      #model: openrouter/google/gemini-2.5-flash
+      #api_key: "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"
+      #rpm: 10
+  #- model_name: szeman-backup-pool
+    #litellm_params:
+      #model: openrouter/google/gemini-2.5-flash
+      #api_key: "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"
+      #rpm: 10
   - model_name: szeman-backup-pool
     litellm_params:
       model: groq/llama-3.3-70b-versatile
