@@ -9,32 +9,32 @@ model_list:
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyBzjJFhpJyt_DNBqMIBt4y5-o-UPjR4PaM"
-      rpm: 15
+      rpm: 10
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyD812jgiizcdNzaRHkHgoT7uOh__rQl-WQ"
-      rpm: 15
+      rpm: 10
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyCZsBOB8mAtu7NLV1i6vZylt-krs8MvpC4"
-      rpm: 15
+      rpm: 10
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyAzje4VbIzQIahJ_BpxtWbJUUHWLKzXDYo"
-      rpm: 15
+      rpm: 10
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyAS5KerXPjTlmk6Rcsf5IDy68np00-NipQ"
-      rpm: 15
+      rpm: 10
   - model_name: szeman-main-pool
     litellm_params:
       model: gemini/gemini-3-flash-preview
       api_key: "AIzaSyDWzSsnVe2e_EY3tG_W6lYK4iIR3lks8ac"
-      rpm: 15
+      rpm: 10
 
   #- model_name: szeman-backup-pool
     #litellm_params:
@@ -95,7 +95,7 @@ model_list:
 
 router_settings:
   routing_strategy: "simple-shuffle"
-  num_retries: 5
-  retry_after: 5
-  timeout: 60
+  num_retries: 8
+  retry_after: 8
+  timeout: 100
   fallbacks: [{"szeman-main-pool": ["szeman-backup-pool"]}]
