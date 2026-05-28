@@ -1,143 +1,61 @@
 // Game State Management
 let gameState = {
-    rescuedTeachers: 0, // This now tracks Values earned
+    rescuedTeachers: 0,
     currentRoom: null,
-    phase: 'minion', // 'minion' or 'value_earned' or 'boss'
+    phase: 'minion', // 'minion' or 'boss'
     enemyHP: 100,
     progress: JSON.parse(localStorage.getItem('msaQuestProgress')) || {
-        101: false, // Dignity
-        102: false, // Kindness
-        103: false, // Compassion
-        104: false, // Courage
-        105: false, // Endeavour
-        100: false  // Final Boss
+        100: false, // 1F Boss (Dignity)
+        200: false, // 2F Boss (Kindness)
+        300: false, // 3F Boss (Compassion)
+        400: false, // 4F Boss (Courage)
+        500: false, // 5F Boss (Endeavour)
+        0: false    // HQ Final Boss (Head of Math)
     },
-    roomMinionProgress: {
-        101: 0, 102: 0, 103: 0, 104: 0, 105: 0
-    }
+    roomMinionProgress: {} // Track progress within rooms
 };
 
-// Data Structure for MSA Values and Challenges
+// Data Structure for MSA Floors, Values, and Challenges
 const roomData = {
-    101: {
-        name: "DIGNITY Room",
-        value: "Dignity",
-        badge: "⚖️",
-        minions: [
-            { q: "12 x 11 = ?", a: 132, hint: "Hint: 12x10 + 12", enemy: "Confusion Imp 😈" },
-            { q: "List the factors of 10. How many are there?", a: 4, hint: "Hint: 1, 2, 5, 10", enemy: "Doubt Wraith 👻" }
-        ],
-        valueChallenge: {
-            q: "What is the Highest Common Factor (HCF) of 20 and 30?",
-            a: 10,
-            hint: "Hint: Factors of 20 (1,2,4,5,10,20), Factors of 30 (1,2,3,5,6,10,15,30).",
-            enemy: "The Gate of Honour ⛩️"
-        }
-    },
-    102: {
-        name: "KINDNESS Room",
-        value: "Kindness",
-        badge: "🤝",
-        minions: [
-            { q: "-7 + 12 = ?", a: 5, hint: "Hint: Think of a thermometer.", enemy: "Frost Bite ❄️" },
-            { q: "10 - (-5) = ?", a: 15, hint: "Hint: Subtracting a negative is like adding.", enemy: "Frost Bite ❄️" }
-        ],
-        valueChallenge: {
-            q: "-3 x 8 = ?",
-            a: -24,
-            hint: "Hint: A negative times a positive is negative.",
-            enemy: "The Wall of Barriers 🧱"
-        }
-    },
-    103: {
-        name: "COMPASSION Room",
-        value: "Compassion",
-        badge: "❤️",
-        minions: [
-            { q: "0.5 + 0.25 = ?", a: 0.75, hint: "Hint: Think of quarters.", enemy: "Fraction Slime 💧" },
-            { q: "What is 1/4 as a percentage?", a: 25, hint: "Hint: 1 out of 4 is how many out of 100?", enemy: "Fraction Slime 💧" }
-        ],
-        valueChallenge: {
-            q: "What is 20% of 60?",
-            a: 12,
-            hint: "Hint: 10% is 6, so 20% is...",
-            enemy: "The Tolerance Lock 🔓"
-        }
-    },
-    104: {
-        name: "COURAGE Room",
-        value: "Courage",
-        badge: "🦁",
-        minions: [
-            { q: "If a map scale is 1:100, how many cm is 5m?", a: 5, hint: "Hint: 5m = 500cm, then divide by 100.", enemy: "Shadow Lion 🦁" },
-            { q: "3^2 + 4^2 = ?", a: 25, hint: "Hint: 9 + 16", enemy: "Shadow Lion 🦁" }
-        ],
-        valueChallenge: {
-            q: "What is the square root of 144?",
-            a: 12,
-            hint: "Hint: What number times itself is 144?",
-            enemy: "The Brave Sentinel 🛡️"
-        }
-    },
-    105: {
-        name: "ENDEAVOUR Room",
-        value: "Endeavour",
-        badge: "🛠️",
-        minions: [
-            { q: "The mean of 5, 10, and 15 is?", a: 10, hint: "Hint: Add them up and divide by 3.", enemy: "Data Gremlin 📊" }
-        ],
-        valueChallenge: {
-            q: "What is the median of 3, 7, 8, 12, 15?",
-            a: 8,
-            hint: "Hint: The middle number in a sorted list.",
-            enemy: "The Pillar of Hard Work 🏛️"
-        }
-    },
-    100: {
-        name: "THE FINAL CHALLENGE",
-        value: "All Values",
-        badge: "🏆",
-        questions: {
-            q: "Solve: (2 + 3) x (10 - 4) / 2",
-            a: 15,
-            hint: "Hint: Follow BIDMAS (Brackets, Indices, Division, Multiplication, Addition, Subtraction).",
-            enemy: "The Master of Ignorance 👺"
-        }
-    }
+    // 1F: DIGNITY
+    101: { name: "Room 101: Multiples", type: 'minion', floor: 1, minions: [{ q: "7 x 8 = ?", a: 56, hint: "Check your 7 times table.", enemy: "Number Imp 😈" }] },
+    100: { name: "1F BOSS: The Dignity Trial", type: 'boss', floor: 1, value: "Dignity", badge: "⚖️", teacher: "Mr. Brown", questions: { q: "HCF of 12 and 18?", a: 6, hint: "Factors of 12: 1,2,3,4,6,12. Factors of 18: 1,2,3,6,9,18.", enemy: "Dignity Golem 🗿" } },
+
+    // 2F: KINDNESS
+    201: { name: "Room 201: Negatives", type: 'minion', floor: 2, minions: [{ q: "-5 + 11 = ?", a: 6, hint: "Start at -5, move 11 right.", enemy: "Negative Wraith 👻" }] },
+    200: { name: "2F BOSS: The Kindness Gate", type: 'boss', floor: 2, value: "Kindness", badge: "🤝", teacher: "Ms. Smith", questions: { q: "-4 x -3 = ?", a: 12, hint: "Negative x Negative = Positive.", enemy: "Kindness Warden 🛡️" } },
+
+    // 3F: COMPASSION
+    301: { name: "Room 301: Fractions", type: 'minion', floor: 3, minions: [{ q: "1/2 of 50 = ?", a: 25, hint: "Divide by 2.", enemy: "Fraction Slime 💧" }] },
+    300: { name: "3F BOSS: The Compassion Lock", type: 'boss', floor: 3, value: "Compassion", badge: "❤️", teacher: "Mr. Jones", questions: { q: "25% of 80 = ?", a: 20, hint: "25% is a quarter.", enemy: "Compassion Heart 💎" } },
+
+    // 4F: COURAGE
+    401: { name: "Room 401: Algebra", type: 'minion', floor: 4, minions: [{ q: "If 2x = 20, x = ?", a: 10, hint: "Divide both sides by 2.", enemy: "Algebra Bat 🦇" }] },
+    400: { name: "4F BOSS: The Courage Arena", type: 'boss', floor: 4, value: "Courage", badge: "🦁", teacher: "Ms. Taylor", questions: { q: "Square root of 81?", a: 9, hint: "What times itself is 81?", enemy: "Courage Lion 🦁" } },
+
+    // 5F: ENDEAVOUR
+    501: { name: "Room 501: Ratios", type: 'minion', floor: 5, minions: [{ q: "Simplify 4:8", a: 0.5, hint: "Divide both by 4 (Answer as decimal 0.5)", enemy: "Ratio Robot 🤖" }] },
+    500: { name: "5F BOSS: The Endeavour Pillar", type: 'boss', floor: 5, value: "Endeavour", badge: "🛠️", teacher: "Mr. Wilson", questions: { q: "15% of 200?", a: 30, hint: "10% is 20, 5% is 10.", enemy: "Endeavour Titan 🏗️" } },
+
+    // HQ: FINAL CHALLENGE
+    0: { name: "HQ: The Final Rescue", type: 'boss', floor: 0, value: "Head of Math", badge: "🎓", teacher: "Head of Math", questions: { q: "(10 + 5) x 2 - 4 = ?", a: 26, hint: "BIDMAS: Brackets first, then Multiply, then Subtract.", enemy: "The Logic Overlord 👑" } }
 };
 
 let currentQuestionSet = [];
 let questionIndex = 0;
 
-// --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Load progress
     const savedProgress = localStorage.getItem('msaQuestProgress');
-    if (savedProgress) {
-        gameState.progress = JSON.parse(savedProgress);
-    }
+    if (savedProgress) gameState.progress = JSON.parse(savedProgress);
 
-    const savedState = localStorage.getItem('msaQuestState');
-    if (savedState) {
-        const parsed = JSON.parse(savedState);
-        gameState.roomMinionProgress = parsed.roomMinionProgress || gameState.roomMinionProgress;
-    }
-
-    // Sync rescued count
-    gameState.rescuedTeachers = Object.keys(roomData)
-        .filter(id => id != 100 && gameState.progress[id]).length;
-
+    updateStats();
     updateMapUI();
-    updateStatsDisplay();
     updateBadges();
 
-    // Event Bindings
-    document.querySelectorAll('.room-btn, .boss-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            if (!button.classList.contains('locked') && !button.disabled) {
-                const roomId = parseInt(button.dataset.roomId);
-                if (!isNaN(roomId)) initiateBattle(roomId);
-            }
+    document.querySelectorAll('.room-btn, .boss-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = parseInt(btn.dataset.roomId);
+            if (!btn.disabled) initiateBattle(id);
         });
     });
 
@@ -147,58 +65,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- Game Logic ---
-
 function initiateBattle(roomId) {
     gameState.currentRoom = roomId;
+    const data = roomData[roomId];
+
     document.getElementById('map-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.remove('hidden');
+    document.getElementById('room-info').innerText = data.name;
     document.getElementById('answer-input').focus();
 
-    if (roomId === 100) {
+    if (data.type === 'boss') {
         gameState.phase = 'boss';
-        currentQuestionSet = [roomData[100].questions];
-        questionIndex = 0;
+        currentQuestionSet = [data.questions];
     } else {
         gameState.phase = 'minion';
-        questionIndex = gameState.roomMinionProgress[roomId] || 0;
-        currentQuestionSet = [...roomData[roomId].minions];
+        currentQuestionSet = data.minions;
     }
 
+    questionIndex = 0;
     gameState.enemyHP = 100;
     updateBattleUI();
     loadQuestion();
 }
 
 function loadQuestion() {
-    const roomId = gameState.currentRoom;
-    let qData;
-
-    if (gameState.phase === 'minion') {
-        qData = currentQuestionSet[questionIndex];
-    } else if (gameState.phase === 'value_earned' || gameState.phase === 'boss') {
-        qData = (roomId === 100) ? roomData[100].questions : roomData[roomId].valueChallenge;
-    }
-
-    if (!qData) return;
-
+    const qData = currentQuestionSet[questionIndex];
     document.getElementById('question-text').innerText = qData.q;
     document.getElementById('answer-input').value = '';
     document.getElementById('math-hint').classList.add('hidden');
-    document.getElementById('enemy-name').innerText = qData.enemy || "Enemy";
-    document.getElementById('enemy-sprite').innerText = (qData.enemy || "").split(' ').pop() || "👾";
+    document.getElementById('enemy-name').innerText = qData.enemy;
+    document.getElementById('enemy-sprite').innerText = qData.enemy.split(' ').pop();
 }
 
 function processAnswer() {
     const input = document.getElementById('answer-input').value;
-    const roomId = gameState.currentRoom;
-    let qData;
-
-    if (gameState.phase === 'minion') {
-        qData = currentQuestionSet[questionIndex];
-    } else {
-        qData = (roomId === 100) ? roomData[100].questions : roomData[roomId].valueChallenge;
-    }
+    const qData = currentQuestionSet[questionIndex];
 
     if (parseFloat(input) === qData.a) {
         handleCorrect();
@@ -208,74 +109,47 @@ function processAnswer() {
 }
 
 function handleCorrect() {
-    createEffect("✨ EXCELLENT ✨", "player-attack");
+    createEffect("💥 HIT!", "player-attack");
+    questionIndex++;
 
-    if (gameState.phase === 'minion') {
-        questionIndex++;
-        gameState.roomMinionProgress[gameState.currentRoom] = questionIndex;
-
-        if (questionIndex >= currentQuestionSet.length) {
-            gameState.phase = 'value_earned';
-            createEffect("CORE VALUE CHALLENGE!", "warning");
-            setTimeout(loadQuestion, 1000);
+    if (questionIndex >= currentQuestionSet.length) {
+        const data = roomData[gameState.currentRoom];
+        if (data.type === 'boss') {
+            gameState.progress[gameState.currentRoom] = true;
+            saveGame();
+            showVictory(gameState.currentRoom);
         } else {
-            gameState.enemyHP -= (100 / currentQuestionSet.length);
-            setTimeout(loadQuestion, 500);
+            // Minion defeated
+            createEffect("ROOM CLEARED!", "warning");
+            setTimeout(showMap, 1000);
         }
     } else {
-        // Value Earned or Boss Defeated
-        gameState.progress[gameState.currentRoom] = true;
-        if (gameState.currentRoom !== 100) gameState.rescuedTeachers++;
-        saveGameState();
-        showVictoryScreen(gameState.currentRoom);
+        gameState.enemyHP -= (100 / currentQuestionSet.length);
+        updateBattleUI();
+        setTimeout(loadQuestion, 500);
     }
-    updateBattleUI();
 }
 
 function handleWrong(hint) {
-    const container = document.getElementById('game-container');
-    container.classList.add('shake');
-    createEffect("Try again!", "enemy-attack");
-    setTimeout(() => container.classList.remove('shake'), 200);
-
+    document.getElementById('game-container').classList.add('shake');
+    setTimeout(() => document.getElementById('game-container').classList.remove('shake'), 200);
     const hintBox = document.getElementById('math-hint');
     hintBox.innerText = hint;
     hintBox.classList.remove('hidden');
 }
 
-function updateBattleUI() {
-    const hpBar = document.getElementById('enemy-hp');
-    const phaseLabel = document.getElementById('battle-phase');
-    const roomTitle = document.getElementById('room-info');
-    const data = roomData[gameState.currentRoom];
-
-    roomTitle.innerText = data.name;
-
-    if (gameState.phase === 'boss') {
-        phaseLabel.innerText = "FINAL CHALLENGE";
-        hpBar.style.backgroundColor = "var(--danger-red)";
-    } else if (gameState.phase === 'minion') {
-        phaseLabel.innerText = "Challenge Phase";
-        hpBar.style.backgroundColor = "var(--blueprint-line)";
-    } else {
-        phaseLabel.innerText = `${data.value.toUpperCase()} CHALLENGE`;
-        hpBar.style.backgroundColor = "var(--math-gold)";
-    }
-    hpBar.style.width = gameState.enemyHP + "%";
-}
-
-function showVictoryScreen(roomId) {
+function showVictory(roomId) {
     const data = roomData[roomId];
     document.getElementById('battle-screen').classList.add('hidden');
     document.getElementById('victory-screen').classList.remove('hidden');
 
-    if (roomId === 100) {
-        document.getElementById('victory-title').innerText = "QUEST COMPLETE! 🏆";
-        document.getElementById('victory-text').innerText = "You have mastered all MSA Values and completed the quest!";
+    if (roomId === 0) {
+        document.getElementById('victory-title').innerText = "MISSION COMPLETE!";
+        document.getElementById('victory-text').innerText = "You rescued the Head of Math and saved MSA!";
         document.getElementById('victory-badge').innerText = "🎓";
     } else {
         document.getElementById('victory-title').innerText = `${data.value.toUpperCase()} EARNED!`;
-        document.getElementById('victory-text').innerText = `You have demonstrated the value of ${data.value}. Well done!`;
+        document.getElementById('victory-text').innerText = `You rescued ${data.teacher} and demonstrated ${data.value}!`;
         document.getElementById('victory-badge').innerText = data.badge;
     }
 }
@@ -284,76 +158,81 @@ function showMap() {
     document.getElementById('victory-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.add('hidden');
     document.getElementById('map-screen').classList.remove('hidden');
+    updateStats();
     updateMapUI();
-    updateStatsDisplay();
     updateBadges();
 }
 
-function saveGameState() {
-    localStorage.setItem('msaQuestProgress', JSON.stringify(gameState.progress));
-    localStorage.setItem('msaQuestState', JSON.stringify({
-        roomMinionProgress: gameState.roomMinionProgress
-    }));
-}
-
-function updateStatsDisplay() {
+function updateStats() {
+    const bossIds = [100, 200, 300, 400, 500];
+    gameState.rescuedTeachers = bossIds.filter(id => gameState.progress[id]).length;
     document.getElementById('teacher-count').innerText = gameState.rescuedTeachers;
-    const progress = Math.floor((gameState.rescuedTeachers / 5) * 100);
-    document.getElementById('overall-progress').innerText = `${progress}%`;
+    const prog = Math.floor(((gameState.rescuedTeachers + (gameState.progress[0] ? 1 : 0)) / 6) * 100);
+    document.getElementById('overall-progress').innerText = prog + "%";
 }
 
 function updateBadges() {
-    const badges = {
-        101: 'badge-dignity',
-        102: 'badge-kindness',
-        103: 'badge-compassion',
-        104: 'badge-courage',
-        105: 'badge-endeavour'
-    };
+    const badges = { 100: 'dignity', 200: 'kindness', 300: 'compassion', 400: 'courage', 500: 'endeavour' };
     for (let id in badges) {
-        const el = document.getElementById(badges[id]);
+        const el = document.getElementById(`badge-${badges[id]}`);
         if (gameState.progress[id]) el.classList.add('earned');
-        else el.classList.remove('earned');
     }
 }
 
 function updateMapUI() {
-    const rooms = [101, 102, 103, 104, 105, 100];
-    let allValuesEarned = true;
+    const floors = [1, 2, 3, 4, 5, 0];
+    let allBadges = true;
 
-    rooms.forEach(id => {
-        const btn = document.querySelector(`[data-room-id="${id}"]`);
-        if (!btn) return;
+    floors.forEach(f => {
+        const floorEl = document.getElementById(f === 0 ? 'floor-hq' : `floor-${f}`);
+        if (!floorEl) return;
 
-        if (id !== 100 && !gameState.progress[id]) allValuesEarned = false;
+        let floorUnlocked = false;
+        if (f === 1) floorUnlocked = true;
+        else if (f === 2 && gameState.progress[100]) floorUnlocked = true;
+        else if (f === 3 && gameState.progress[200]) floorUnlocked = true;
+        else if (f === 4 && gameState.progress[300]) floorUnlocked = true;
+        else if (f === 5 && gameState.progress[400]) floorUnlocked = true;
+        else if (f === 0 && gameState.progress[100] && gameState.progress[200] && gameState.progress[300] && gameState.progress[400] && gameState.progress[500]) floorUnlocked = true;
 
-        if (gameState.progress[id]) {
-            btn.classList.add('completed');
-            btn.disabled = true;
+        if (floorUnlocked) {
+            floorEl.classList.remove('locked');
+            floorEl.classList.add('active');
+            const btns = floorEl.querySelectorAll('button');
+            btns.forEach(btn => {
+                const rid = parseInt(btn.dataset.roomId);
+                if (gameState.progress[rid]) {
+                    btn.disabled = true;
+                    btn.classList.add('completed');
+                } else {
+                    // Logic to unlock boss only after room?
+                    if (btn.classList.contains('boss-btn')) {
+                        const roomId = parseInt(btn.dataset.roomId);
+                        const roomRequired = roomId + 1; // e.g., 100 needs 101
+                        // For simplicity, boss is open if floor is open
+                        btn.disabled = false;
+                        btn.classList.remove('locked');
+                    } else {
+                        btn.disabled = false;
+                        btn.classList.remove('locked');
+                    }
+                }
+            });
         } else {
-            let locked = false;
-            // Linear progression for rooms
-            if (id === 102 && !gameState.progress[101]) locked = true;
-            if (id === 103 && !gameState.progress[102]) locked = true;
-            if (id === 104 && !gameState.progress[103]) locked = true;
-            if (id === 105 && !gameState.progress[104]) locked = true;
-            // Boss needs all 5
-            if (id === 100 && !allValuesEarned) locked = true;
-
-            if (locked) {
-                btn.classList.add('locked');
-                btn.disabled = true;
-            } else {
-                btn.classList.remove('locked');
-                btn.disabled = false;
-            }
+            floorEl.classList.add('locked');
+            allBadges = false;
         }
     });
+}
 
-    if (allValuesEarned) {
-        document.getElementById('boss-floor').classList.remove('locked');
-        document.getElementById('boss-floor').classList.add('active');
-    }
+function saveGame() {
+    localStorage.setItem('msaQuestProgress', JSON.stringify(gameState.progress));
+}
+
+function updateBattleUI() {
+    const hp = document.getElementById('enemy-hp');
+    hp.style.width = gameState.enemyHP + "%";
+    document.getElementById('battle-phase').innerText = gameState.phase === 'boss' ? "BOSS BATTLE" : "Stage 1";
 }
 
 function createEffect(text, type) {
@@ -361,8 +240,8 @@ function createEffect(text, type) {
     const div = document.createElement('div');
     div.className = `hit-effect ${type}`;
     div.innerText = text;
-    div.style.left = (Math.random() * 50 + 25) + "%";
-    div.style.top = (Math.random() * 50 + 25) + "%";
+    div.style.left = (Math.random() * 60 + 20) + "%";
+    div.style.top = (Math.random() * 60 + 20) + "%";
     layer.appendChild(div);
     setTimeout(() => div.remove(), 1000);
 }
