@@ -336,39 +336,58 @@ function updateBadges() {
 
 function updateMapUI() {
     const rooms = Object.keys(roomData);
-    rooms.forEach(id => {
+    rooms.forEach(idStr => {
+        const id = parseInt(idStr);
         const btn = document.querySelector(`[data-room-id="${id}"]`);
         if (!btn) return;
 
-        if (gameState.progress[id]) {
+        // Check completion (handling both string/number keys from localStorage)
+        const isCompleted = gameState.progress[id] === true || gameState.progress[idStr] === true;
+
+        if (isCompleted) {
             btn.classList.add('completed');
             btn.disabled = true;
+            btn.classList.remove('locked');
         } else {
             let locked = false;
             // Linear unlocking per floor
-            if (id == 102 && !gameState.progress[101]) locked = true;
-            if (id == 103 && !gameState.progress[102]) locked = true;
-            if (id == 100 && !gameState.progress[103]) locked = true;
+            if (id == 102 && !isRoomDone(101)) locked = true;
+            if (id == 103 && !isRoomDone(102)) locked = true;
+            if (id == 100 && !isRoomDone(103)) locked = true;
 
-            if (id == 201 && !gameState.progress[100]) locked = true;
-            if (id == 202 && !gameState.progress[201]) locked = true;
-            if (id == 200 && !gameState.progress[202]) locked = true;
+            // Floor 2 unlocks if Floor 1 Boss (100) is done
+            if (id == 201 && !isRoomDone(100)) locked = true;
+            if (id == 202 && !isRoomDone(201)) locked = true;
+            if (id == 200 && !isRoomDone(202)) locked = true;
 
-            if (id == 301 && !gameState.progress[200]) locked = true;
-            if (id == 302 && !gameState.progress[301]) locked = true;
-            if (id == 303 && !gameState.progress[302]) locked = true;
-            if (id == 300 && !gameState.progress[303]) locked = true;
+            // Floor 3
+            if (id == 301 && !isRoomDone(200)) locked = true;
+            if (id == 302 && !isRoomDone(301)) locked = true;
+            if (id == 303 && !isRoomDone(302)) locked = true;
+            if (id == 300 && !isRoomDone(303)) locked = true;
 
-            if (id == 401 && !gameState.progress[300]) locked = true;
-            if (id == 402 && !gameState.progress[401]) locked = true;
-            if (id == 400 && !gameState.progress[402]) locked = true;
+            // Floor 4
+            if (id == 401 && !isRoomDone(300)) locked = true;
+            if (id == 402 && !isRoomDone(401)) locked = true;
+            if (id == 400 && !isRoomDone(402)) locked = true;
 
-            if (id == 0 && !gameState.progress[400]) locked = true;
+            // HQ
+            if (id == 0 && !isRoomDone(400)) locked = true;
 
-            if (locked) { btn.classList.add('locked'); btn.disabled = true; }
-            else { btn.classList.remove('locked'); btn.disabled = false; }
+            if (locked) {
+                btn.classList.add('locked');
+                btn.disabled = true;
+            } else {
+                btn.classList.remove('locked');
+                btn.disabled = false;
+            }
         }
     });
+}
+
+// Helper to check progress safely
+function isRoomDone(id) {
+    return gameState.progress[id] === true || gameState.progress[String(id)] === true;
 }
 
 function saveGame() { localStorage.setItem('msaQuestProgress', JSON.stringify(gameState.progress)); }
