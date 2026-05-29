@@ -341,8 +341,8 @@ function updateMapUI() {
         const btn = document.querySelector(`[data-room-id="${id}"]`);
         if (!btn) return;
 
-        // Check completion (handling both string/number keys from localStorage)
-        const isCompleted = gameState.progress[id] === true || gameState.progress[idStr] === true;
+        const isCompleted = isRoomDone(id);
+        const floorRow = btn.closest('.floor-row');
 
         if (isCompleted) {
             btn.classList.add('completed');
@@ -350,7 +350,7 @@ function updateMapUI() {
             btn.classList.remove('locked');
         } else {
             let locked = false;
-            // Linear unlocking per floor
+            // Floor 1 Rooms
             if (id == 102 && !isRoomDone(101)) locked = true;
             if (id == 103 && !isRoomDone(102)) locked = true;
             if (id == 100 && !isRoomDone(103)) locked = true;
@@ -360,18 +360,18 @@ function updateMapUI() {
             if (id == 202 && !isRoomDone(201)) locked = true;
             if (id == 200 && !isRoomDone(202)) locked = true;
 
-            // Floor 3
+            // Floor 3 unlocks if Floor 2 Boss (200) is done
             if (id == 301 && !isRoomDone(200)) locked = true;
             if (id == 302 && !isRoomDone(301)) locked = true;
             if (id == 303 && !isRoomDone(302)) locked = true;
             if (id == 300 && !isRoomDone(303)) locked = true;
 
-            // Floor 4
+            // Floor 4 unlocks if Floor 3 Boss (300) is done
             if (id == 401 && !isRoomDone(300)) locked = true;
             if (id == 402 && !isRoomDone(401)) locked = true;
             if (id == 400 && !isRoomDone(402)) locked = true;
 
-            // HQ
+            // HQ unlocks if Floor 4 Boss (400) is done
             if (id == 0 && !isRoomDone(400)) locked = true;
 
             if (locked) {
@@ -380,6 +380,11 @@ function updateMapUI() {
             } else {
                 btn.classList.remove('locked');
                 btn.disabled = false;
+                // CRITICAL: Unlock the entire floor row so it can be clicked
+                if (floorRow) {
+                    floorRow.classList.remove('locked');
+                    floorRow.classList.add('active');
+                }
             }
         }
     });
