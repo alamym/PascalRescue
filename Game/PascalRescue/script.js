@@ -42,7 +42,11 @@ const roomData = {
         name: "1F BOSS: Prime Golem",
         type: 'boss',
         badge: "DIGNITY",
-        questions: { q: "Find the HCF of 24 and 36.", a: 12, hint: "Highest number that divides both.", enemy: "Prime Golem 🗿" }
+        questions: [
+            { q: "HCF of 24 and 36?", a: 12, hint: "Highest number that divides both.", enemy: "Prime Golem 🗿" },
+            { q: "LCM of 4 and 10?", a: 20, hint: "Smallest number that is a multiple of both.", enemy: "Prime Golem 🗿" },
+            { q: "What is 10 to the power of 4 (10^4)?", a: 10000, hint: "A 1 followed by four zeros.", enemy: "Prime Golem 🗿" }
+        ]
     },
 
     // FLOOR 2: ALGEBRA
@@ -173,7 +177,6 @@ function initiateBattle(roomId) {
     document.getElementById('map-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.remove('hidden');
 
-    // Use room-name instead of room-info to avoid overwriting the phase span
     const roomNameEl = document.getElementById('room-name');
     if (roomNameEl) roomNameEl.innerText = data.name;
 
@@ -181,12 +184,11 @@ function initiateBattle(roomId) {
 
     if (data.type === 'boss') {
         gameState.phase = 'boss';
-        currentQuestionSet = [data.questions];
+        currentQuestionSet = Array.isArray(data.questions) ? data.questions : [data.questions];
         questionIndex = 0;
     } else {
         gameState.phase = 'minion';
         currentQuestionSet = data.minions;
-        // ROBUSTNESS: Ensure index is within bounds
         let savedIdx = gameState.roomMinionProgress[roomId] || 0;
         questionIndex = (savedIdx >= currentQuestionSet.length) ? 0 : savedIdx;
     }
@@ -199,23 +201,20 @@ function initiateBattle(roomId) {
 function loadQuestion() {
     const roomId = gameState.currentRoom;
     const data = roomData[roomId];
-    let qData;
+    let qData = currentQuestionSet[questionIndex];
 
-    if (gameState.phase === 'minion') {
-        qData = currentQuestionSet[questionIndex];
-    } else if (gameState.phase === 'teacher_rescue') {
+    if (gameState.phase === 'teacher_rescue') {
         qData = data.teacherRescue;
-    } else {
-        qData = data.questions;
     }
 
     const qTextEl = document.getElementById('question-text');
     if (!qData) {
-        qTextEl.innerText = "Error: Question not found. Please return to map.";
+        console.error("No question data found!", roomId, gameState.phase, questionIndex);
+        if (qTextEl) qTextEl.innerText = "Error: Question not found. Please return to map.";
         return;
     }
 
-    qTextEl.innerText = qData.q;
+    if (qTextEl) qTextEl.innerText = qData.q;
     document.getElementById('answer-input').value = '';
     document.getElementById('math-hint').classList.add('hidden');
     document.getElementById('enemy-name').innerText = qData.enemy || "Math Minion";
@@ -242,23 +241,31 @@ function processAnswer() {
 function handleCorrect() {
     createEffect("💥 HIT!", "player-attack");
 
-    if (gameState.phase === 'minion') {
+    if (gameState.phase === 'minion' || gameState.phase === 'boss') {
         questionIndex++;
-        // Save minion progress
-        gameState.roomMinionProgress[gameState.currentRoom] = questionIndex;
-        localStorage.setItem('msaRoomProgress', JSON.stringify(gameState.roomMinionProgress));
+        if (gameState.phase === 'minion') {
+            gameState.roomMinionProgress[gameState.currentRoom] = questionIndex;
+            localStorage.setItem('msaRoomProgress', JSON.stringify(gameState.roomMinionProgress));
+        }
 
         if (questionIndex >= currentQuestionSet.length) {
-            gameState.phase = 'teacher_rescue';
-            gameState.enemyHP = 100;
-            createEffect("RESCUE THE TEACHER!", "warning");
-            setTimeout(loadQuestion, 1000);
+            if (gameState.phase === 'minion') {
+                gameState.phase = 'teacher_rescue';
+                gameState.enemyHP = 100;
+                createEffect("RESCUE THE TEACHER!", "warning");
+                setTimeout(loadQuestion, 1000);
+            } else {
+                // Boss defeated after all questions
+                gameState.progress[gameState.currentRoom] = true;
+                saveGame();
+                showVictory(gameState.currentRoom);
+            }
         } else {
             gameState.enemyHP -= (100 / currentQuestionSet.length);
             setTimeout(loadQuestion, 500);
         }
     } else {
-        // Teacher or Boss rescued
+        // Teacher rescued (one-shot stage)
         gameState.progress[gameState.currentRoom] = true;
         saveGame();
         showVictory(gameState.currentRoom);
