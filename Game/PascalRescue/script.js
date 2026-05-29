@@ -54,23 +54,29 @@ const roomData = {
         name: "201: Expression Arcade",
         minions: [
             { q: "Simplify: 3a + 2a", a: 5, hint: "Add the coefficients (answer only the number)", enemy: "Bracket Goblin 👺" },
-            { q: "Simplify: 10x - 4x", a: 6, hint: "Subtract the numbers.", enemy: "Bracket Goblin 👺" }
+            { q: "Simplify: 10x - 4x + 2x", a: 8, hint: "10-4+2...", enemy: "Bracket Goblin 👺" },
+            { q: "Collect terms: 5y + 3 + 2y", a: 8, hint: "Only add the 'y' terms (answer the coefficient of y)", enemy: "Bracket Goblin 👺" }
         ],
-        teacherRescue: { q: "Expand: 3(x + 4). If x=2, what is the value?", a: 18, hint: "3 * (2 + 4)", enemy: "Teacher's Cage ⛓️" }
+        teacherRescue: { q: "Expand: 3(x + 4). If x=5, what is the total value?", a: 27, hint: "3 * (5 + 4)", enemy: "Teacher's Cage ⛓️" }
     },
     202: {
         name: "202: Equation Lab",
         minions: [
-            { q: "x + 5 = 12, x = ?", a: 7, hint: "Subtract 5.", enemy: "Variable Viper 🐍" },
-            { q: "x / 2 = 10, x = ?", a: 20, hint: "Multiply by 2.", enemy: "Variable Viper 🐍" }
+            { q: "x + 5 = 12, x = ?", a: 7, hint: "Subtract 5 from both sides.", enemy: "Variable Viper 🐍" },
+            { q: "4x = 20, x = ?", a: 5, hint: "Divide by 4.", enemy: "Variable Viper 🐍" },
+            { q: "x / 3 = 6, x = ?", a: 18, hint: "Multiply by 3.", enemy: "Variable Viper 🐍" }
         ],
-        teacherRescue: { q: "2x - 3 = 7, x = ?", a: 5, hint: "Add 3, then divide by 2.", enemy: "Teacher's Cage ⛓️" }
+        teacherRescue: { q: "2x - 4 = 10, x = ?", a: 7, hint: "Add 4, then divide by 2.", enemy: "Teacher's Cage ⛓️" }
     },
     200: {
         name: "2F BOSS: X-Algebrator",
         type: 'boss',
         badge: "KINDNESS",
-        questions: { q: "If a=3 and b=4, find 2a + b.", a: 10, hint: "2*3 + 4", enemy: "X-Algebrator 🤖" }
+        questions: [
+            { q: "Substitution: If a=5 and b=3, what is 2a + b?", a: 13, hint: "2*5 + 3", enemy: "X-Algebrator 🤖" },
+            { q: "Solve for x: 5x + 2 = 22", a: 4, hint: "Subtract 2, then divide by 5.", enemy: "X-Algebrator 🤖" },
+            { q: "Solve for y: y/4 - 1 = 2", a: 12, hint: "Add 1, then multiply by 4.", enemy: "X-Algebrator 🤖" }
+        ]
     },
 
     // FLOOR 3: RATIO & SHAPE
