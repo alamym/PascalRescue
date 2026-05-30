@@ -1,8 +1,0 @@
-Log Date: Tue May 19 17:18:23 GMT 2026
-Current Session: 2019 Integration Attempt
-WRE Files Found: data/txts/WRE/AQA-8464-B-1F-WRE-18.txt, data/txts/WRE/AQA-8464-B-1F-WRE-19.txt
-MS Files missing in txt_marked: AQA-8464-B-1F-MS-19.txt
-Script wreIntegratorV2.js: Executed (Skipped all due to missing MS source)
-Script docxGenerator.js: Executed (Standard mode)
-Reason for failure: Missing source MS TXT file for 2019-B-1F in data/outputs/txt_marked/
-
