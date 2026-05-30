@@ -153,7 +153,10 @@ const roomData = {
 
 let currentQuestionSet = [];
 let questionIndex = 0;
+let bossTimer = null;
+let timeLeft = 60;
 
+// --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     // Load progress
     const savedProgress = localStorage.getItem('msaQuestProgress');
@@ -185,10 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initiateBattle(roomId) {
     gameState.currentRoom = roomId;
     const data = roomData[roomId];
-    if (!data) {
-        console.error("Room data not found for ID:", roomId);
-        return;
-    }
+    if (!data) return;
 
     document.getElementById('map-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.remove('hidden');
@@ -196,9 +196,20 @@ function initiateBattle(roomId) {
     const roomNameEl = document.getElementById('room-name');
     if (roomNameEl) roomNameEl.innerText = data.name;
 
+    // Reset and hide timer box by default
+    const timerBox = document.getElementById('timer-box');
+    if (timerBox) timerBox.classList.add('hidden');
+    if (bossTimer) clearInterval(bossTimer);
+
     document.getElementById('answer-input').focus();
 
-    if (data.type === 'boss') {
+    if (roomId === 0) {
+        // FINAL BOSS LOGIC: 5 Random questions from all floors + 60s timer
+        gameState.phase = 'boss';
+        currentQuestionSet = generateFinalBossQuestions();
+        questionIndex = 0;
+        startBossTimer();
+    } else if (data.type === 'boss') {
         gameState.phase = 'boss';
         currentQuestionSet = Array.isArray(data.questions) ? data.questions : [data.questions];
         questionIndex = 0;
@@ -212,6 +223,42 @@ function initiateBattle(roomId) {
     gameState.enemyHP = 100;
     updateBattleUI();
     loadQuestion();
+}
+
+function generateFinalBossQuestions() {
+    let allPool = [];
+    // Scrap every question from 1F-4F
+    Object.keys(roomData).forEach(id => {
+        const room = roomData[id];
+        if (parseInt(id) === 0) return;
+        if (room.minions) allPool.push(...room.minions);
+        if (room.teacherRescue) allPool.push(room.teacherRescue);
+        if (room.questions) {
+            if (Array.isArray(room.questions)) allPool.push(...room.questions);
+            else allPool.push(room.questions);
+        }
+    });
+    // Shuffle and pick top 5
+    return allPool.sort(() => Math.random() - 0.5).slice(0, 5);
+}
+
+function startBossTimer() {
+    timeLeft = 60;
+    const timerBox = document.getElementById('timer-box');
+    const timerDisplay = document.getElementById('time-left');
+    if (timerBox) timerBox.classList.remove('hidden');
+    if (timerDisplay) timerDisplay.innerText = timeLeft;
+
+    bossTimer = setInterval(() => {
+        timeLeft--;
+        if (timerDisplay) timerDisplay.innerText = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(bossTimer);
+            alert("TIME UP! The Maths Demon has overpowered you. Try again!");
+            showMap();
+        }
+    }, 1000);
 }
 
 function loadQuestion() {
@@ -323,6 +370,7 @@ function handleWrong(hint) {
 }
 
 function showVictory(roomId) {
+    if (bossTimer) clearInterval(bossTimer);
     const data = roomData[roomId];
     document.getElementById('battle-screen').classList.add('hidden');
     document.getElementById('victory-screen').classList.remove('hidden');
@@ -347,6 +395,7 @@ function showVictory(roomId) {
 }
 
 function showMap() {
+    if (bossTimer) clearInterval(bossTimer);
     document.getElementById('victory-screen').classList.add('hidden');
     document.getElementById('battle-screen').classList.add('hidden');
     document.getElementById('map-screen').classList.remove('hidden');

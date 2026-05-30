@@ -176,6 +176,20 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
     flex-direction: column;
 }
 
+#room-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#timer-box {
+    color: var(--danger-red);
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+}
+
 #battle-screen {
     flex-grow: 1;
     display: flex;
