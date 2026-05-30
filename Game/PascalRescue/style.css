@@ -145,10 +145,16 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
     color: #000;
 }
 
-.room-btn.completed {
-    border-color: var(--success-green);
-    color: var(--success-green);
-    background: rgba(0, 255, 136, 0.1);
+.room-btn.completed, .boss-btn.completed {
+    border-color: var(--success-green) !important;
+    color: var(--success-green) !important;
+    background: rgba(0, 255, 136, 0.1) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.room-btn.completed:hover, .boss-btn.completed:hover {
+    background: var(--success-green) !important;
+    color: #000 !important;
 }
 
 .boss-btn {
@@ -156,6 +162,7 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
     width: 100%;
     font-size: 18px;
     letter-spacing: 3px;
+    margin-top: 5px;
 }
 
 .school-motto {
@@ -195,6 +202,7 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
     display: flex;
     flex-direction: column;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .hp-bar-container {
@@ -227,14 +235,16 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
 
 .interaction-area {
     background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 #question-text {
-    font-size: 20px;
+    font-size: 1.1rem;
     margin-bottom: 15px;
-    min-height: 50px;
+    min-height: 40px;
+    line-height: 1.4;
 }
 
 .input-group {
@@ -242,13 +252,19 @@ header p { margin: 0; font-size: 12px; color: var(--blueprint-line); }
     gap: 10px;
 }
 
-input[type="number"] {
+input#answer-input {
     flex-grow: 1;
     padding: 12px;
     font-size: 18px;
     background: #000;
-    border: 1px solid var(--blueprint-line);
+    border: 2px solid var(--blueprint-line);
     color: white;
+    outline: none;
+}
+
+input#answer-input:focus {
+    border-color: var(--math-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 #attack-btn {
@@ -257,6 +273,12 @@ input[type="number"] {
     border: none;
     font-weight: bold;
     cursor: pointer;
+    color: #000;
+    transition: 0.2s;
+}
+
+#attack-btn:hover {
+    background: var(--math-gold);
 }
 
 #math-hint {
