@@ -233,14 +233,18 @@ function processAnswer() {
     const data = roomData[roomId];
     let qData;
 
-    if (gameState.phase === 'minion') qData = currentQuestionSet[questionIndex];
-    else if (gameState.phase === 'teacher_rescue') qData = data.teacherRescue;
-    else qData = data.questions;
+    // Correctly identify which question to compare against
+    if (gameState.phase === 'teacher_rescue') {
+        qData = data.teacherRescue;
+    } else {
+        // This covers both 'minion' and 'boss' phases using the array
+        qData = currentQuestionSet[questionIndex];
+    }
 
-    if (parseFloat(input) === qData.a) {
+    if (qData && parseFloat(input) === qData.a) {
         handleCorrect();
     } else {
-        handleWrong(qData.hint);
+        handleWrong(qData ? qData.hint : "Try again!");
     }
 }
 
