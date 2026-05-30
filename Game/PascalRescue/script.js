@@ -53,11 +53,11 @@ const roomData = {
     201: {
         name: "201: Expression Arcade",
         minions: [
-            { q: "Simplify: 3a + 2a", a: 5, hint: "Add the coefficients (answer only the number)", enemy: "Bracket Goblin 👺" },
-            { q: "Simplify: 10x - 4x + 2x", a: 8, hint: "10-4+2...", enemy: "Bracket Goblin 👺" },
-            { q: "Collect terms: 5y + 3 + 2y", a: 8, hint: "Only add the 'y' terms (answer the coefficient of y)", enemy: "Bracket Goblin 👺" }
+            { q: "Simplify: 3a + 2a", a: "5a", hint: "Add the coefficients (3+2) and keep the 'a'.", enemy: "Bracket Goblin 👺" },
+            { q: "Simplify: 10x - 4x + 2x", a: "8x", hint: "10 - 4 + 2 = ?", enemy: "Bracket Goblin 👺" },
+            { q: "Collect terms: 5y + 3 + 2y", a: "7y+3", hint: "Add the 'y' terms together. Keep the '+3'.", enemy: "Bracket Goblin 👺" }
         ],
-        teacherRescue: { q: "Expand: 3(x + 4). If x=5, what is the total value?", a: 27, hint: "3 * (5 + 4)", enemy: "Teacher's Cage ⛓️" }
+        teacherRescue: { q: "Expand: 3(x + 4)", a: "3x+12", hint: "Multiply the 3 by both 'x' and '4'.", enemy: "Teacher's Cage ⛓️" }
     },
     202: {
         name: "202: Equation Lab",
@@ -228,7 +228,7 @@ function loadQuestion() {
 }
 
 function processAnswer() {
-    const input = document.getElementById('answer-input').value;
+    let input = document.getElementById('answer-input').value.trim().toLowerCase();
     const roomId = gameState.currentRoom;
     const data = roomData[roomId];
     let qData;
@@ -237,14 +237,31 @@ function processAnswer() {
     if (gameState.phase === 'teacher_rescue') {
         qData = data.teacherRescue;
     } else {
-        // This covers both 'minion' and 'boss' phases using the array
         qData = currentQuestionSet[questionIndex];
     }
 
-    if (qData && parseFloat(input) === qData.a) {
+    if (!qData) return;
+
+    // Prepare expected answer for comparison
+    let expected = String(qData.a).toLowerCase().trim();
+
+    // Check if both are numbers for precise float comparison (e.g. 0.5 vs .5)
+    if (!isNaN(input) && !isNaN(expected) && input !== "" && expected !== "") {
+        if (parseFloat(input) === parseFloat(expected)) {
+            handleCorrect();
+            return;
+        }
+    }
+
+    // String comparison (for algebra like '5a' or '3x+12')
+    // Remove all spaces for algebra comparison to be flexible (e.g. '3x + 12' vs '3x+12')
+    let inputNormalized = input.replace(/\s+/g, '');
+    let expectedNormalized = expected.replace(/\s+/g, '');
+
+    if (inputNormalized === expectedNormalized) {
         handleCorrect();
     } else {
-        handleWrong(qData ? qData.hint : "Try again!");
+        handleWrong(qData.hint || "Try again!");
     }
 }
 
