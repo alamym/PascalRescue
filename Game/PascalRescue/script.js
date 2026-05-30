@@ -92,14 +92,15 @@ const roomData = {
         name: "302: Geometry Zone",
         minions: [
             { q: "Angle on a straight line is ?", a: 180, hint: "A half turn.", enemy: "Angle Phantom 👻" },
-            { q: "Angles in a triangle add to ?", a: 180, hint: "Same as a straight line.", enemy: "Angle Phantom 👻" }
+            { q: "Angles in a triangle add up to ?", a: 180, hint: "Same as a straight line.", enemy: "Angle Phantom 👻" }
         ],
         teacherRescue: { q: "One angle is 40 on a straight line. Find the missing angle.", a: 140, hint: "180 - 40", enemy: "Teacher's Cage ⛓️" }
     },
     303: {
         name: "303: Perimeter Perimeter",
         minions: [
-            { q: "Perimeter of square with side 5cm?", a: 20, hint: "4 sides of 5cm.", enemy: "Area Anomaly 🟦" }
+            { q: "Perimeter of square with side 5cm?", a: 20, hint: "4 sides of 5cm.", enemy: "Area Anomaly 🟦" },
+            { q: "Perimeter of rectangle 4cm by 6cm?", a: 20, hint: "(4+6) * 2", enemy: "Area Anomaly 🟦" }
         ],
         teacherRescue: { q: "Area of triangle with base 10 and height 5?", a: 25, hint: "(Base x Height) / 2", enemy: "Teacher's Cage ⛓️" }
     },
@@ -107,21 +108,27 @@ const roomData = {
         name: "3F BOSS: Geometric Sphinx",
         type: 'boss',
         badge: "COMPASSION",
-        questions: { q: "Find the area of a rectangle 8m by 7m.", a: 56, hint: "Length x Width", enemy: "Geometric Sphinx 🏺" }
+        questions: [
+            { q: "Find the area of a rectangle 8m by 7m.", a: 56, hint: "Length x Width", enemy: "Geometric Sphinx 🏺" },
+            { q: "A circle has no corners. (1 for True, 0 for False)", a: 1, hint: "True", enemy: "Geometric Sphinx 🏺" },
+            { q: "Find the perimeter of a regular hexagon with side 3cm.", a: 18, hint: "3 * 6", enemy: "Geometric Sphinx 🏺" }
+        ]
     },
 
     // FLOOR 4: DATA & PROBABILITY
     401: {
         name: "401: Chance Chamber",
         minions: [
-            { q: "Probability of 'Heads' on a coin (decimal)?", a: 0.5, hint: "1 out of 2.", enemy: "Dice Drone 🎲" }
+            { q: "Probability of 'Heads' on a coin (decimal)?", a: 0.5, hint: "1 out of 2.", enemy: "Dice Drone 🎲" },
+            { q: "Probability of 'Red' in a bag with 3 Red and 7 Blue (decimal)?", a: 0.3, hint: "3 out of 10.", enemy: "Dice Drone 🎲" }
         ],
         teacherRescue: { q: "Probability of rolling a 6 on a fair die (fraction 1/x, x=?)", a: 6, hint: "1 out of 6.", enemy: "Teacher's Cage ⛓️" }
     },
     402: {
         name: "402: Chart Citadel",
         minions: [
-            { q: "Mean of 2, 4, 6?", a: 4, hint: "Total / 3.", enemy: "Graph Gremlin 📊" }
+            { q: "Mean of 2, 4, 6?", a: 4, hint: "Total / 3.", enemy: "Graph Gremlin 📊" },
+            { q: "Mode of 1, 2, 2, 3, 5?", a: 2, hint: "The most frequent number.", enemy: "Graph Gremlin 📊" }
         ],
         teacherRescue: { q: "Find the range of 10, 20, 50.", a: 40, hint: "Largest - Smallest.", enemy: "Teacher's Cage ⛓️" }
     },
@@ -129,7 +136,10 @@ const roomData = {
         name: "4F BOSS: Stochastic Titan",
         type: 'boss',
         badge: "COURAGE",
-        questions: { q: "Find the median of 3, 5, 8, 10, 12.", a: 8, hint: "The middle number.", enemy: "Stochastic Titan 🌪️" }
+        questions: [
+            { q: "Find the median of 3, 5, 8, 10, 12.", a: 8, hint: "The middle number.", enemy: "Stochastic Titan 🌪️" },
+            { q: "Probability of an impossible event is ?", a: 0, hint: "Cannot happen.", enemy: "Stochastic Titan 🌪️" }
+        ]
     },
 
     // ROOFTOP: THE FINAL CHALLENGE
@@ -221,7 +231,11 @@ function loadQuestion() {
     }
 
     if (qTextEl) qTextEl.innerText = qData.q;
-    document.getElementById('answer-input').value = '';
+    const inputEl = document.getElementById('answer-input');
+    if (inputEl) {
+        inputEl.value = '';
+        inputEl.focus(); // Always refocus on new question
+    }
     document.getElementById('math-hint').classList.add('hidden');
     document.getElementById('enemy-name').innerText = qData.enemy || "Math Minion";
     document.getElementById('enemy-sprite').innerText = (qData.enemy || "").split(' ').pop() || "👾";
