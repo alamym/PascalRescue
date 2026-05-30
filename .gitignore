@@ -1,0 +1,34 @@
+# Sensitive Files
+.env
+.env.local
+.claude/
+*.json.txt
+.claude.json.txt
+
+# Claude Code Files
+CLAUDE.md
+memory/
+
+# Temp/Draft Files
+*bak*
+*bak*.*
+"You are helping me import context f.txt"
+Briefing_Report_*.md
+after_click.png
+after_search.png
+briefing_error.png
+
+# Configuration Overrides
+*litellm_config.yaml*
+!litellm_config.yaml
+litellm_settings.yaml
+google_litellm_config.yaml
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# Temporary / Log files
+*.log
+data/outputs/
+data/output.md
