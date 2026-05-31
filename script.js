@@ -15,6 +15,60 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// --- Sound Effects Manager ---
+const Sound = {
+    ctx: null,
+
+    init() {
+        if (!this.ctx) {
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+    },
+
+    play(type) {
+        this.init();
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        const now = this.ctx.currentTime;
+
+        if (type === 'correct') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, now); // C5
+            osc.frequency.exponentialRampToValueAtTime(880, now + 0.1); // A5
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+            osc.start(now);
+            osc.stop(now + 0.3);
+        } else if (type === 'wrong') {
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, now);
+            osc.frequency.linearRampToValueAtTime(50, now + 0.2);
+            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.linearRampToValueAtTime(0.01, now + 0.2);
+            osc.start(now);
+            osc.stop(now + 0.2);
+        } else if (type === 'victory') {
+            const notes = [523.25, 659.25, 783.99, 1046.50]; // C, E, G, C (Chord)
+            notes.forEach((freq, i) => {
+                const o = this.ctx.createOscillator();
+                const g = this.ctx.createGain();
+                o.connect(g);
+                g.connect(this.ctx.destination);
+                o.frequency.setValueAtTime(freq, now + i * 0.1);
+                g.gain.setValueAtTime(0.05, now + i * 0.1);
+                g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.1 + 0.5);
+                o.start(now + i * 0.1);
+                o.stop(now + i * 0.1 + 0.5);
+            });
+        }
+    }
+};
+
 // Game State Management
 let gameState = {
     rescuedTeachers: 0,
@@ -371,6 +425,7 @@ function processAnswer() {
 }
 
 function handleCorrect() {
+    Sound.play('correct');
     createEffect("💥 HIT!", "player-attack");
     if (gameState.phase === 'minion' || gameState.phase === 'boss') {
         questionIndex++;
@@ -402,6 +457,7 @@ function handleCorrect() {
 }
 
 function handleWrong(hint) {
+    Sound.play('wrong');
     document.getElementById('game-container').classList.add('shake');
     setTimeout(() => document.getElementById('game-container').classList.remove('shake'), 200);
     const hintBox = document.getElementById('math-hint');
@@ -410,6 +466,7 @@ function handleWrong(hint) {
 }
 
 function showVictory(roomId) {
+    Sound.play('victory');
     if (bossTimer) clearInterval(bossTimer);
     const data = roomData[roomId];
     document.getElementById('battle-screen').classList.add('hidden');
