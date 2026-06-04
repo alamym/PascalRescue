@@ -1,7 +1,7 @@
 /**
- * Science Lab Hero - Core Game Logic (v0.6.3)
+ * Science Lab Hero - Core Game Logic (v0.6.15)
  * Updated by SzeMan (小敏)
- * Changes: Debug logging for leaderboard, Number casting for score comparison, unique key fix.
+ * Changes: Robust leaderboard DOM rendering (using createElement instead of innerHTML).
  */
 
 const FALLBACK_QUESTIONS = {
@@ -10,6 +10,16 @@ const FALLBACK_QUESTIONS = {
         { "q": "Respiration happens in which part?", "options": [{"text": "Mitochondria", "correct": true}, {"text": "Nucleus", "correct": false}, {"text": "Ribosome", "correct": false}, {"text": "Membrane", "correct": false}] }
     ]}
 };
+for(let i=2; i<=11; i++) {
+    if(!FALLBACK_QUESTIONS[i]) {
+        FALLBACK_QUESTIONS[i] = {
+            "title": i===11 ? "👹 BOSS LEVEL" : `Topic ${i} Lab`,
+            "questions": [
+                { "q": `Placeholder Question ${i}?`, "options": [{"text": "Correct", "correct": true}, {"text": "Wrong", "correct": false}, {"text": "Wrong", "correct": false}, {"text": "Wrong", "correct": false}] }
+            ]
+        };
+    }
+}
 
 class AudioManager {
     constructor() {
@@ -79,6 +89,7 @@ class GameEngine {
     }
 
     formatDateTime(ts) {
+        if (!ts) return "N/A";
         const d = new Date(ts);
         return d.toLocaleDateString('en-GB') + "; " + d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
     }
@@ -171,28 +182,20 @@ class GameEngine {
         const uniqueKey = encodeURIComponent(name) + "_" + this.heroID;
         const timeout = new Promise((_, r) => setTimeout(() => r(new Error("Timeout")), 5000));
 
-        console.log("Saving for:", name, "Key:", uniqueKey, "Score:", this.score);
-
         try {
             const ref = database.ref('leaderboard/' + uniqueKey);
             const snap = await Promise.race([ref.once('value'), timeout]);
             const existing = snap.val();
-
             const newScore = Number(this.score);
             const oldScore = existing ? Number(existing.score) : 0;
 
-            console.log("Existing data:", existing, "Old Score:", oldScore, "New Score:", newScore);
-
             if (existing && oldScore >= newScore) {
-                console.log("No update needed.");
                 this.showToast("Score not higher than personal best!", "info");
             } else {
                 await Promise.race([
                     ref.set({ name, score: newScore, level: this.level, timestamp: Date.now() }),
                     timeout
                 ]);
-                console.log("Score saved successfully.");
-                this.showToast("Score Saved!", "success");
             }
             this.showLeaderboard();
         } catch (e) {
@@ -209,10 +212,49 @@ class GameEngine {
         this.ui.leaderboardBody.innerHTML = '<tr><td colspan="5">Loading...</td></tr>';
 
         try {
-            const snap = await database.ref('leaderboard').orderByChild('score').limitToLast(10).once('value');
-            const data = []; snap.forEach(c => data.push(c.val()));
-            this.ui.leaderboardBody.innerHTML = data.reverse().map((e, i) => `<tr><td>${i+1}</td><td>${e.name}</td><td>${e.score}</td><td>${e.level || '-'}</td><td>${this.formatDateTime(e.timestamp)}</td></tr>`).join('');
-        } catch (e) { this.ui.leaderboardBody.innerHTML = '<tr><td colspan="5">Offline Mode</td></tr>'; }
+            console.log("[DEBUG] Fetching from Firebase path: /leaderboard");
+            const ref = database.ref('/leaderboard');
+
+            // 加入連線狀態偵測
+            const snap = await ref.once('value');
+
+            // 檢查是否存在資料
+            if (!snap.exists()) {
+                console.warn("[DEBUG] No data found at /leaderboard");
+                this.ui.leaderboardBody.innerHTML = '<tr><td colspan="5">No entries yet</td></tr>';
+                return;
+            }
+
+            const data = [];
+            snap.forEach(c => {
+                const val = c.val();
+                console.log("[DEBUG] Found entry:", val);
+                data.push({
+                    name: val.name || "Unknown",
+                    score: Number(val.score) || 0,
+                    level: val.level || '-',
+                    timestamp: val.timestamp || 0
+                });
+            });
+
+            console.log(`[DEBUG] Successfully fetched ${data.length} entries.`);
+            data.sort((a, b) => b.score - a.score);
+            const top10 = data.slice(0, 10);
+
+            // 確保目標元素正確
+            const tbody = this.ui.leaderboardBody;
+            tbody.innerHTML = ''; // 清空
+
+            top10.forEach((e, i) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${i+1}</td><td>${e.name}</td><td>${e.score}</td><td>${e.level}</td><td>${this.formatDateTime(e.timestamp)}</td>`;
+                tbody.appendChild(tr);
+            });
+            console.log("[DEBUG] Rendering complete.");
+        } catch (e) {
+            console.error("[ERROR] Leaderboard fetch failed:", e); // Fail Loud
+            this.ui.leaderboardBody.innerHTML = '<tr><td colspan="5">Error: ' + e.message + '</td></tr>';
+        }
     }
 
     showVictory() {
